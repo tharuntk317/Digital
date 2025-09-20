@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ product.display_name }} | Creator Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <div class="max-w-4xl mx-auto p-6">
+    
+    <!-- Profile Header -->
+    <div class="bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center">
+      <img src="{{ product.logo or '/assets/default_profile.png' }}"
+           alt="{{ product.display_name }}"
+           class="w-32 h-32 rounded-full object-cover shadow-md">
+      <h1 class="text-2xl font-bold mt-4">{{ product.display_name }}</h1>
+      <p class="text-gray-500">@{{ product.user }}</p>
+      
+      <!-- Social Links -->
+      {% if product.social_links %}
+        <div class="flex gap-4 mt-3">
+            <a href="{{ social_links }}" target="_blank" class="text-blue-500 hover:text-blue-700">
+            Social Links
+            </a>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Bio Section -->
+    <div class="bg-white shadow-md rounded-xl p-6 mt-6">
+      <h2 class="text-xl font-semibold mb-2">About</h2>
+      <p class="text-gray-700">{{ product.bio or "No bio available." }}</p>
+    </div>
+
+    <!-- Skills Section -->
+    {% if product.skills_tags %}
+      <div class="bg-white shadow-md rounded-xl p-6 mt-6">
+        <h2 class="text-xl font-semibold mb-2">Skills & Tags</h2>
+        <div class="flex flex-wrap gap-2">
+          {% for skill in product.skills_tags %}
+            <span class="px-3 py-1 bg-blue-100 text-blue-600 text-sm rounded-full">{{ skill }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- Company Section -->
+    {% if product.company_name %}
+      <div class="bg-white shadow-md rounded-xl p-6 mt-6">
+        <h2 class="text-xl font-semibold mb-2">Company</h2>
+        <p class="text-gray-700">{{ product.company_name }}</p>
+      </div>
+    {% endif %}
+
+    <!-- Interested Button -->
+  <div class="text-center mt-8">
+  <button id="interested-btn" 
+          class="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white font-medium rounded-xl shadow-lg hover:scale-105 transition transform">
+    ⭐ I’m Interested
+  </button>
+</div>
+
+<script>
+  document.getElementById("interested-btn").addEventListener("click", function() {
+    frappe.call({
+      method: "your_app.api.send_interest",
+      args: {
+        profile: "{{ product.name }}"
+      },
+      callback: function(r) {
+        if (!r.exc) {
+          frappe.confirm(
+            r.message,
+            function() {
+              // YES → send mail
+              frappe.call({
+                method: "your_app.api.send_interest_mail",
+                args: { profile: "{{ product.name }}" },
+                callback: function() {
+                  frappe.msgprint("📩 Mail sent successfully!");
+                }
+              });
+            },
+            function() {
+              // NO → do nothing
+              frappe.msgprint("❌ You chose not to send the mail.");
+            }
+          );
+        }
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

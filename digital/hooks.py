@@ -242,3 +242,27 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+
+web_include_css = "/assets/digital/css/digital.css"
+
+jinja = {
+    "methods": [
+        "digital.utils"
+    ]
+}
+
+
+app_include_js = [
+    "https://checkout.razorpay.com/v1/checkout.js"
+]
+
+website_route_rules = [
+    {"from_route": "/product/<name>", "to_route": "product"}
+]
+
+doc_events = {
+    "Buyer Payment": {
+        "on_submit": "digital.api.record_purchase"
+    }
+}
+

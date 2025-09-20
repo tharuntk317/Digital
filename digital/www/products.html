@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+  <!-- Product Grid -->
+  <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    {% for doc in products %}
+      <a href="/product/{{ doc.name }}" 
+         class="bg-white rounded-xl shadow hover:shadow-lg transition block overflow-hidden">
+
+        <!-- Product Preview -->
+        <img src="{{ doc.preview_image }}" 
+             alt="{{ doc.title }}" class="w-full h-40 object-cover">
+
+        <!-- Card Content -->
+        <div class="flex p-4 gap-3">
+          <!-- Creator Logo -->
+          <img src="{{ creator_logos.get(doc.creator) }}"
+               alt="Creator Logo" 
+               class="h-10 w-10 rounded-full object-cover">
+
+          <!-- Product Info -->
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold line-clamp-1">{{ doc.title }}</h3>
+            <p class="text-gray-600 text-sm">₹ {{ doc.price }}</p>
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+
+</body>
+</html>

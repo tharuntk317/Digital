@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creators Marketplace</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+<body class="bg-black text-gray-100">
+  <!-- Navbar -->
+<nav class="bg-gradient-to-r from-purple-700 to-pink-600 shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+    <!-- Logo -->
+    <a href="index.html" class="text-2xl font-bold text-white tracking-wide">Creators<span class="text-pink-300">Hub</span></a>
+
+    <!-- Hamburger for mobile -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-white focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Menu Links -->
+    <div id="menu" class="hidden md:flex gap-6 items-center text-sm font-medium">
+      <a href="explore.html" class="text-gray-200 hover:text-white transition">Explore</a>
+      <a href="dashboard.html" class="text-gray-200 hover:text-white transition">Dashboard</a>
+      <a href="products.html"
+        class="px-4 py-2 border border-white rounded hover:bg-white hover:text-purple-700 transition">Products</a>
+      <a href="login.html"
+        class="px-4 py-2 bg-black text-white rounded shadow hover:bg-gray-800 border border-pink-400 transition">Login</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-gradient-to-r from-purple-700 to-pink-600 px-6">
+  <a href="explore.html" class="block py-3 text-white border-b border-purple-500">Explore</a>
+  <a href="dashboard.html" class="block py-3 text-white border-b border-purple-500">Dashboard</a>
+  <a href="cart.html" class="block py-3 text-white border-b border-purple-500">Cart</a>
+  <a href="login.html" class="block py-3 text-white">Login</a>
+</div>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
+
+  <!-- Hero Section -->
+  <section class="max-w-7xl mx-auto px-6 py-16 grid gap-10 lg:grid-cols-2 items-center">
+    <div>
+      <h1 class="text-5xl font-extrabold text-white leading-tight">Turn Your Creativity Into Income</h1>
+      <p class="mt-4 text-lg text-gray-300">Sell your designs, music, templates, and courses. Join thousands of creators building sustainable businesses on our platform.</p>
+      <div class="mt-6 flex gap-3">
+        <a href="login.html" class="px-6 py-3 rounded bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold shadow hover:opacity-90">Start Selling</a>
+        <a href="explore.html" class="px-6 py-3 rounded border border-purple-400 text-purple-300 hover:bg-purple-600 hover:text-white">Explore Marketplace</a>
+      </div>
+    </div>
+
+    <!-- Featured Creators Updated -->
+    <div class="rounded-2xl shadow-lg p-6 bg-gray-900 border border-pink-500">
+      <h3 class="font-semibold text-2xl text-center text-pink-400 mb-6">Featured Creators</h3>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-4 border border-purple-500 rounded bg-black hover:bg-gray-800 transition">
+          <img src="https://via.placeholder.com/150" alt="AikoArt" class="w-full h-32 object-cover rounded mb-3">
+          <h4 class="font-semibold text-lg text-white">AikoArt</h4>
+          <p class="text-sm text-gray-400">Anime Illustrator — selling character packs and custom commissions.</p>
+        </div>
+        <div class="p-4 border border-pink-500 rounded bg-black hover:bg-gray-800 transition">
+          <img src="https://via.placeholder.com/150" alt="WaveMaker" class="w-full h-32 object-cover rounded mb-3">
+          <h4 class="font-semibold text-lg text-white">WaveMaker</h4>
+          <p class="text-sm text-gray-400">Music Producer — high-quality loops and background tracks for creators.</p>
+        </div>
+        <div class="p-4 border border-purple-500 rounded bg-black hover:bg-gray-800 transition">
+          <img src="https://via.placeholder.com/150" alt="PixelPro" class="w-full h-32 object-cover rounded mb-3">
+          <h4 class="font-semibold text-lg text-white">PixelPro</h4>
+          <p class="text-sm text-gray-400">UI/UX Designer — premium Figma templates and kits.</p>
+        </div>
+        <div class="p-4 border border-pink-500 rounded bg-black hover:bg-gray-800 transition">
+          <img src="https://via.placeholder.com/150" alt="BookNest" class="w-full h-32 object-cover rounded mb-3">
+          <h4 class="font-semibold text-lg text-white">BookNest</h4>
+          <p class="text-sm text-gray-400">Author — selling digital books and writing resources.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-semibold text-purple-300 mb-8">How It Works</h2>
+    <div class="mt-6 grid sm:grid-cols-3 gap-6">
+      <div class="p-6 rounded border border-purple-500 bg-gray-900 text-center">
+        <img src="https://via.placeholder.com/50" alt="Signup" class="mx-auto mb-3">
+        <h4 class="font-semibold text-white">Sign Up</h4>
+        <p class="text-sm text-gray-400 mt-2">Create a buyer or creator account. Creators get a dashboard to manage products and payouts.</p>
+      </div>
+      <div class="p-6 rounded border border-pink-500 bg-gray-900 text-center">
+        <img src="https://via.placeholder.com/50" alt="Upload" class="mx-auto mb-3">
+        <h4 class="font-semibold text-white">Upload Products</h4>
+        <p class="text-sm text-gray-400 mt-2">Add product title, description, category, and digital file. Set your price and preview images.</p>
+      </div>
+      <div class="p-6 rounded border border-purple-500 bg-gray-900 text-center">
+        <img src="https://via.placeholder.com/50" alt="Earn" class="mx-auto mb-3">
+        <h4 class="font-semibold text-white">Grow & Earn</h4>
+        <p class="text-sm text-gray-400 mt-2">Track sales, respond to customers, and withdraw earnings to your payout method.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Categories -->
+  <section class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-semibold text-purple-300 mb-8">Popular Categories</h2>
+    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="p-6 rounded bg-gray-900 border border-pink-500 text-center hover:bg-purple-700 hover:text-white transition">
+        <img src="https://via.placeholder.com/40" alt="Digital Art" class="mx-auto mb-3">
+        <h4 class="font-semibold">Digital Art</h4>
+      </div>
+      <div class="p-6 rounded bg-gray-900 border border-purple-500 text-center hover:bg-pink-700 hover:text-white transition">
+        <img src="https://via.placeholder.com/40" alt="Music" class="mx-auto mb-3">
+        <h4 class="font-semibold">Music & Audio</h4>
+      </div>
+      <div class="p-6 rounded bg-gray-900 border border-pink-500 text-center hover:bg-purple-700 hover:text-white transition">
+        <img src="https://via.placeholder.com/40" alt="Templates" class="mx-auto mb-3">
+        <h4 class="font-semibold">Templates</h4>
+      </div>
+      <div class="p-6 rounded bg-gray-900 border border-purple-500 text-center hover:bg-pink-700 hover:text-white transition">
+        <img src="https://via.placeholder.com/40" alt="Courses" class="mx-auto mb-3">
+        <h4 class="font-semibold">Courses & eBooks</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Plans -->
+  <section class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-semibold text-purple-300 text-center mb-8">Pricing Plans</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-8 bg-gray-900 border border-purple-500 rounded text-center">
+        <h3 class="text-xl font-semibold text-white mb-3">Starter</h3>
+        <p class="text-3xl font-bold text-pink-400 mb-4">Free</p>
+        <p class="text-gray-400 mb-6">Basic features to get started as a creator.</p>
+        <a href="#" class="px-6 py-2 rounded bg-purple-600 text-white hover:bg-purple-700">Get Started</a>
+      </div>
+      <div class="p-8 bg-gray-900 border border-pink-500 rounded text-center">
+        <h3 class="text-xl font-semibold text-white mb-3">Pro</h3>
+        <p class="text-3xl font-bold text-pink-400 mb-4">$9/mo</p>
+        <p class="text-gray-400 mb-6">Advanced tools and analytics for serious creators.</p>
+        <a href="#" class="px-6 py-2 rounded bg-pink-600 text-white hover:bg-pink-700">Upgrade</a>
+      </div>
+      <div class="p-8 bg-gray-900 border border-purple-500 rounded text-center">
+        <h3 class="text-xl font-semibold text-white mb-3">Enterprise</h3>
+        <p class="text-3xl font-bold text-pink-400 mb-4">$29/mo</p>
+        <p class="text-gray-400 mb-6">Everything you need for scaling your creative business.</p>
+        <a href="#" class="px-6 py-2 rounded bg-purple-600 text-white hover:bg-purple-700">Contact Sales</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-purple-500 bg-black py-10 text-center text-sm text-gray-500">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-6 mb-6">
+      <div>
+        <h4 class="font-semibold text-white mb-2">Marketplace</h4>
+        <ul class="space-y-1">
+          <li><a href="#" class="hover:text-pink-400">Explore</a></li>
+          <li><a href="#" class="hover:text-pink-400">Categories</a></li>
+          <li><a href="#" class="hover:text-pink-400">New Arrivals</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-2">Creators</h4>
+        <ul class="space-y-1">
+          <li><a href="#" class="hover:text-pink-400">Dashboard</a></li>
+          <li><a href="#" class="hover:text-pink-400">Upload</a></li>
+          <li><a href="#" class="hover:text-pink-400">Payouts</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-2">Support</h4>
+        <ul class="space-y-1">
+          <li><a href="#" class="hover:text-pink-400">Help Center</a></li>
+          <li><a href="#" class="hover:text-pink-400">Contact Us</a></li>
+          <li><a href="#" class="hover:text-pink-400">Terms & Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <p>© 2025 CreatorsHub. All rights reserved.</p>
+  </footer>
+</body>
+</html>

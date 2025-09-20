@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ doc.title }}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center p-6">
+
+  <div class="bg-white rounded-xl shadow-lg max-w-lg w-full p-6">
+    <img src="{{ doc.preview_image }}"
+         alt="{{ doc.title }}"
+         class="w-full h-60 object-cover rounded-lg mb-4">
+    <div class="flex items-center gap-3 mb-4">
+    <a href="/profile">
+  <img src="{{ creator_logo or '/assets/default_creator.png' }}"
+       alt="{{ doc.name }} Logo"
+       class="h-12 w-12 rounded-full object-cover">
+</a>
+ 
+      <h2 class="text-2xl font-bold">{{ doc.title }}</h2>
+    </div>
+
+    <p class="text-gray-600 mb-2 text-lg">₹ {{ doc.price }}</p>
+    <p class="text-gray-700 mb-4">{{ doc.description or "" }}</p>
+
+    <a href="/app/buyer-payment/new-buyer-payment?product_id={{ doc.name }}&product_price={{ doc.price }}"
+       class="bg-gradient-to-r from-pink-600 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-pink-700 hover:to-purple-700 transition-all shadow-lg">
+      Buy Now
+    </a>
+  </div>
+
+</body>
+</html>

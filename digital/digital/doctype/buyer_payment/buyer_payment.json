@@ -1,0 +1,80 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-17 16:08:47.245884",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "payment_method",
+  "user_name",
+  "product_id",
+  "product_price",
+  "payment_status",
+  "payment_id"
+ ],
+ "fields": [
+  {
+   "fieldname": "payment_method",
+   "fieldtype": "Select",
+   "label": "Payment Method",
+   "options": "UPI\nCard\nPost Paid\nEIM"
+  },
+  {
+   "fieldname": "user_name",
+   "fieldtype": "Link",
+   "label": "User Name",
+   "options": "Buyer Profile"
+  },
+  {
+   "fieldname": "product_id",
+   "fieldtype": "Data",
+   "label": "Product ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "product_price",
+   "fieldtype": "Data",
+   "label": "Product Price",
+   "read_only": 1
+  },
+  {
+   "default": "Prosses",
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "label": "Payment",
+   "options": "Success\nProsses\nFailed"
+  },
+  {
+   "fieldname": "payment_id",
+   "fieldtype": "Data",
+   "label": "Payment ID",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-18 19:13:35.310145",
+ "modified_by": "Administrator",
+ "module": "Digital",
+ "name": "Buyer Payment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
