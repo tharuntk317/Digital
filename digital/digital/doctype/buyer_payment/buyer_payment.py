@@ -26,3 +26,18 @@ def after_successful_payment(docname):
     return {"status": "ok", "message": "Purchase recorded"}
 
 
+# @frappe.whitelist()
+# def get_chart_data():
+#     payments = frappe.get_all("Buyer Payment", fields=["product", "product_price"])
+#     product_map = {}
+#     for p in payments:
+#         if p.product in product_map:
+#             product_map[p.product] += p.product_price
+#         else:
+#             product_map[p.product] = p.product_price
+
+#     labels = list(product_map.keys())
+#     datasets = [{ "name": "Revenue", "values": Object.values(product_map) }]
+
+#     return {"labels": labels, "datasets": datasets}
+

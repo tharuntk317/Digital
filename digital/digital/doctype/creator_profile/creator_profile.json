@@ -14,7 +14,8 @@
   "profile_image",
   "social_links",
   "startup_company",
-  "company_name"
+  "company_name",
+  "wallet"
  ],
  "fields": [
   {
@@ -66,12 +67,19 @@
    "fieldname": "company_name",
    "fieldtype": "Data",
    "label": "Company Name"
+  },
+  {
+   "default": "0",
+   "fieldname": "wallet",
+   "fieldtype": "Currency",
+   "label": "Wallet",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-19 17:07:55.580953",
+ "modified": "2025-09-20 19:30:35.621133",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Creator Profile",

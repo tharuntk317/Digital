@@ -11,4 +11,3 @@ frappe.ui.form.on("Digital Product", {
         }
     }
 });
-

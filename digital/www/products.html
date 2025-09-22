@@ -5,30 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Products</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    /* Animation Classes */
+    .fade-in { animation: fadeIn 1.2s ease-in-out forwards; opacity: 0; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .glow {
+      text-shadow: 0 0 10px #3b82f6, 0 0 20px #60a5fa;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 p-6">
+<body class="bg-black text-white p-6">
+
+  <!-- Page Title -->
+  <div class="max-w-7xl mx-auto mb-8 fade-in">
+    <h1 class="text-3xl font-bold glow">Our Products</h1>
+    <p class="text-gray-300 mt-2">Browse the latest anime-inspired products from your favorite creators.</p>
+  </div>
 
   <!-- Product Grid -->
-  <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+  <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-7xl mx-auto">
     {% for doc in products %}
       <a href="/product/{{ doc.name }}" 
-         class="bg-white rounded-xl shadow hover:shadow-lg transition block overflow-hidden">
-
+         class="bg-gray-900 rounded-xl shadow-lg hover:shadow-blue-500/50 transition overflow-hidden block group fade-in">
+        
         <!-- Product Preview -->
-        <img src="{{ doc.preview_image }}" 
-             alt="{{ doc.title }}" class="w-full h-40 object-cover">
+        <div class="relative w-full h-48 overflow-hidden">
+          <img src="{{ doc.preview_image or '/assets/placeholder.png' }}" 
+               alt="{{ doc.title }}" 
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        </div>
 
         <!-- Card Content -->
-        <div class="flex p-4 gap-3">
-          <!-- Creator Logo -->
-          <img src="{{ creator_logos.get(doc.creator) }}"
-               alt="Creator Logo" 
-               class="h-10 w-10 rounded-full object-cover">
+        <div class="p-4 flex flex-col gap-2">
+          <!-- Product Title -->
+          <h3 class="text-lg font-semibold text-white line-clamp-1">{{ doc.title }}</h3>
+          
+          <!-- Product Category / Tags -->
+          <div class="flex flex-wrap gap-2 text-sm text-gray-400">
+            {% if doc.category %}
+              <span class="bg-gray-800 px-2 py-1 rounded-full">{{ doc.category }}</span>
+            {% endif %}
+            {% if doc.tags %}
+              <span class="bg-gray-800 px-2 py-1 rounded-full">{{ doc.tags }}</span>
+            {% endif %}
+          </div>
 
-          <!-- Product Info -->
-          <div class="flex-1">
-            <h3 class="text-lg font-semibold line-clamp-1">{{ doc.title }}</h3>
-            <p class="text-gray-600 text-sm">₹ {{ doc.price }}</p>
+          <!-- Price -->
+          <p class="text-white font-semibold mt-1">₹ {{ doc.price }}</p>
+
+          <!-- Creator -->
+          <div class="flex items-center mt-2 gap-2">
+            <img src="{{ creator_logos.get(doc.creator) or '/assets/placeholder.png' }}" 
+                 alt="Creator Logo" 
+                 class="h-8 w-8 rounded-full object-cover border border-gray-700">
+            <span class="text-gray-300 text-sm">{{ doc.creator }}</span>
           </div>
         </div>
       </a>
