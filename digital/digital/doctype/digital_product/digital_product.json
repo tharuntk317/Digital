@@ -20,7 +20,7 @@
   "column_break_dovl",
   "status",
   "product_image",
-  "tab_2_tab",
+  "section_break_yhqr",
   "route",
   "published"
  ],
@@ -75,17 +75,14 @@
    "options": "Draft\nPublished"
   },
   {
-   "fieldname": "tab_2_tab",
-   "fieldtype": "Tab Break",
-   "label": "Tab 2"
-  },
-  {
+   "depends_on": "published",
    "fieldname": "route",
    "fieldtype": "Data",
    "label": "Route"
   },
   {
    "default": "0",
+   "depends_on": "route",
    "fieldname": "published",
    "fieldtype": "Check",
    "label": "Published"
@@ -109,6 +106,10 @@
   {
    "fieldname": "column_break_dovl",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_yhqr",
+   "fieldtype": "Section Break"
   }
  ],
  "grid_page_length": 50,
@@ -117,7 +118,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2025-09-23 17:23:20.143467",
+ "modified": "2025-09-27 16:23:46.030027",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Digital Product",
