@@ -5,6 +5,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "user_name",
   "product_id",
   "product_price",
   "download"
@@ -26,12 +27,17 @@
    "fieldtype": "Data",
    "label": "Product Price",
    "read_only": 1
+  },
+  {
+   "fieldname": "user_name",
+   "fieldtype": "Data",
+   "label": "User Name"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-18 17:37:26.387445",
+ "modified": "2025-09-25 13:06:45.196164",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Download Page",

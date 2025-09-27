@@ -1,8 +1,7 @@
-// Copyright (c) 2025, tharun and contributors
-// For license information, please see license.txt
-
-// frappe.ui.form.on("Purchase History", {
-// 	refresh(frm) {
-
-// 	},
-// });
+frappe.ui.form.on("Purchase History", {
+	refresh(frm) {
+frm.add_custom_button(__('Go to Product'), function() {
+        frappe.set_route('Form', 'Digital Product', frm.doc.product);
+    });
+	},
+});

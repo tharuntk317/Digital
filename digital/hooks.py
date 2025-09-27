@@ -5,8 +5,6 @@ app_description = "tharun "
 app_email = "tharuntk376@gmail.com"
 app_license = "mit"
 
-web_include_css = "/assets/digital/css/digital.css"
-
 jinja = {
     "methods": [
         "digital.utils"
@@ -20,4 +18,15 @@ app_include_js = [
 website_route_rules = [
     {"from_route": "/product/<name>", "to_route": "product"}
 ]
+
+scheduler_events = {
+    "cron": {
+        "35 10 * * *": [   
+            "digital.tasks.send_good"
+        ]
+    }
+}
+
+
+
 

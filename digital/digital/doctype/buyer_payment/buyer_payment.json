@@ -10,7 +10,8 @@
   "product_id",
   "product_price",
   "payment_status",
-  "payment_id"
+  "payment_id",
+  "payment_time_and_data"
  ],
  "fields": [
   {
@@ -41,7 +42,7 @@
    "default": "Prosses",
    "fieldname": "payment_status",
    "fieldtype": "Select",
-   "label": "Payment",
+   "label": "Payment Status",
    "options": "Success\nProsses\nFailed"
   },
   {
@@ -49,12 +50,18 @@
    "fieldtype": "Data",
    "label": "Payment ID",
    "read_only": 1
+  },
+  {
+   "default": "now",
+   "fieldname": "payment_time_and_data",
+   "fieldtype": "Datetime",
+   "label": "Payment Time and Data"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-18 19:13:35.310145",
+ "modified": "2025-09-25 13:03:00.701430",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Buyer Payment",

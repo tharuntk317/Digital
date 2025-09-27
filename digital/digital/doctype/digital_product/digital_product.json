@@ -10,14 +10,16 @@
   "creator",
   "title",
   "description",
+  "download_count",
+  "column_break_leny",
   "category",
   "tags",
   "price",
   "file",
   "preview_image",
+  "column_break_dovl",
   "status",
   "product_image",
-  "download_count",
   "tab_2_tab",
   "route",
   "published"
@@ -95,11 +97,18 @@
    "options": "preview_image"
   },
   {
-   "default": "0",
    "fieldname": "download_count",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Download Count",
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_leny",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_dovl",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
@@ -108,7 +117,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2025-09-20 19:23:16.980880",
+ "modified": "2025-09-23 17:23:20.143467",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Digital Product",

@@ -8,7 +8,6 @@
  "field_order": [
   "user",
   "product",
-  "creator",
   "price",
   "payment_id",
   "purchase_date"
@@ -16,7 +15,7 @@
  "fields": [
   {
    "fieldname": "user",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "User",
    "options": "User"
   },
@@ -25,12 +24,6 @@
    "fieldtype": "Link",
    "label": "Product",
    "options": "Digital Product"
-  },
-  {
-   "fieldname": "creator",
-   "fieldtype": "Link",
-   "label": "Creator",
-   "options": "Creator Profile"
   },
   {
    "fieldname": "price",
@@ -51,7 +44,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-22 14:03:03.519642",
+ "modified": "2025-09-25 14:41:17.564159",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Purchase History",
