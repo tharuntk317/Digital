@@ -55,3 +55,17 @@ frappe.ready(() => {
         loadRazorpay();
     });
 });
+
+
+frappe.ready(() => {
+    document.body.style.backgroundColor = "#cad0ddff";  
+//     document.body.style.color = "#f9fafb";           
+//     const form = document.querySelector(".web-form-wrapper");
+//     if (form) {
+//         form.style.backgroundColor = "#090e16ff";  
+//         form.style.color = "#f9fafb";            
+//         form.style.borderRadius = "10px";         
+//         form.style.padding = "1.5rem";         
+//     }
+});
+

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,11 +6,11 @@
   <title>Products</title>
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Custom Styles -->
+  
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Poppins', sans-serif; }
-    /* Animation Classes */
+    
     .fade-in { animation: fadeIn 1.2s ease-in-out forwards; opacity: 0; }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
@@ -22,32 +22,23 @@
   </style>
 </head>
 <body class="bg-black text-white p-6">
-
-  <!-- Page Title -->
-  <div class="max-w-7xl mx-auto mb-8 fade-in">
-    <h1 class="text-3xl font-bold glow">Our Products</h1>
-    <p class="text-gray-300 mt-2">Browse the latest anime-inspired products from your favorite creators.</p>
-  </div>
-
-  <!-- Product Grid -->
   <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-7xl mx-auto">
     {% for doc in products %}
       <a href="/product/{{ doc.name }}" 
          class="bg-gray-900 rounded-xl shadow-lg hover:shadow-blue-500/50 transition overflow-hidden block group fade-in">
         
-        <!-- Product Preview -->
+     
         <div class="relative w-full h-48 overflow-hidden">
           <img src="{{ doc.preview_image or '/assets/placeholder.png' }}" 
                alt="{{ doc.title }}" 
                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
         </div>
 
-        <!-- Card Content -->
         <div class="p-4 flex flex-col gap-2">
-          <!-- Product Title -->
+        
           <h3 class="text-lg font-semibold text-white line-clamp-1">{{ doc.title }}</h3>
           
-          <!-- Product Category / Tags -->
+         
           <div class="flex flex-wrap gap-2 text-sm text-gray-400">
             {% if doc.category %}
               <span class="bg-gray-800 px-2 py-1 rounded-full">{{ doc.category }}</span>
@@ -57,10 +48,10 @@
             {% endif %}
           </div>
 
-          <!-- Price -->
+      
           <p class="text-white font-semibold mt-1">₹ {{ doc.price }}</p>
 
-          <!-- Creator -->
+        
           <div class="flex items-center mt-2 gap-2">
             <img src="{{ creator_logos.get(doc.creator) or '/assets/placeholder.png' }}" 
                  alt="Creator Logo" 
@@ -73,4 +64,86 @@
   </div>
 
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .fade-in { animation: fadeIn 1.2s ease-in-out forwards; opacity: 0; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .glow { text-shadow: 0 0 10px #3b82f6, 0 0 20px #60a5fa; }
+  </style>
+</head>
+<body class="bg-black text-white p-6">
+
+  <h1 class="text-4xl font-bold text-center mb-8 glow fade-in">Our Products</h1>
+
+
+  <div class="max-w-7xl mx-auto mb-6 fade-in">
+    <label for="categoryFilter" class="mr-2 text-gray-300">Filter by Category:</label>
+    <select id="categoryFilter" class="p-2 rounded bg-gray-900 text-white">
+      <option value="all">All Categories</option>
+      {% for category in categories %}
+        <option value="{{ category }}">{{ category }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div id="productGrid" class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-7xl mx-auto">
+    {% for doc in products %}
+      <a href="/product/{{ doc.name }}" class="product-card bg-gray-900 rounded-xl shadow-lg hover:shadow-blue-500/50 transition overflow-hidden block group fade-in"
+         data-category="{{ doc.category }}">
+        
+        <div class="relative w-full h-48 overflow-hidden">
+          <img src="{{ doc.preview_image or '/assets/placeholder.png' }}" alt="{{ doc.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <div class="p-4 flex flex-col gap-2">
+          <h3 class="text-lg font-semibold text-white line-clamp-1">{{ doc.title }}</h3>
+
+          <div class="flex flex-wrap gap-2 text-sm text-gray-400">
+            {% if doc.category %}<span class="bg-gray-800 px-2 py-1 rounded-full">{{ doc.category }}</span>{% endif %}
+            {% if doc.tags %}<span class="bg-gray-800 px-2 py-1 rounded-full">{{ doc.tags }}</span>{% endif %}
+          </div>
+
+          <p class="text-white font-semibold mt-1">₹ {{ doc.price }}</p>
+
+          <div class="flex items-center mt-2 gap-2">
+            <img src="{{ creator_logos.get(doc.creator) or '/assets/placeholder.png' }}" alt="Creator Logo" class="h-8 w-8 rounded-full object-cover border border-gray-700">
+            <span class="text-gray-300 text-sm">{{ doc.creator }}</span>
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+  
+  <script>
+    const filterSelect = document.getElementById('categoryFilter');
+    const products = document.querySelectorAll('.product-card');
+
+    filterSelect.addEventListener('change', function() {
+      const selected = this.value;
+      products.forEach(p => {
+        if(selected === 'all' || p.dataset.category === selected) {
+          p.style.display = 'block';
+        } else {
+          p.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+</body>
 </html>
+
+

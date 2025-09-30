@@ -26,7 +26,13 @@ scheduler_events = {
         ]
     }
 }
+website_context = {
+    "brand_html": "Digital Marketplace",
+    "favicon": "/assets/digital/images/digital_logo.png"
+}
 
-
-
-
+default_mail_footer = """
+ <div>
+ Sent via <a href="#" target="_blank">Digital Marketplace</a>
+</div>
+"""

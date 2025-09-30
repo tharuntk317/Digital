@@ -22,7 +22,8 @@
   "product_image",
   "section_break_yhqr",
   "route",
-  "published"
+  "published",
+  "amended_from"
  ],
  "fields": [
   {
@@ -44,10 +45,13 @@
   {
    "fieldname": "category",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Category",
-   "options": "Ebook\nMusic\nArt\nTemplate\nImage"
+   "options": "Ebook\nMusic\nArt\nTemplate\nImage",
+   "reqd": 1
   },
   {
+   "description": "Use @ for make tags",
    "fieldname": "tags",
    "fieldtype": "Small Text",
    "label": "Tags"
@@ -60,19 +64,24 @@
   {
    "fieldname": "file",
    "fieldtype": "Attach",
-   "label": "File"
+   "in_list_view": 1,
+   "label": "File",
+   "reqd": 1
   },
   {
    "fieldname": "preview_image",
    "fieldtype": "Attach Image",
    "label": "Preview Image",
-   "options": "file"
+   "options": "file",
+   "reqd": 1
   },
   {
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Status",
-   "options": "Draft\nPublished"
+   "options": "\nDraft\nPublished",
+   "reqd": 1
   },
   {
    "depends_on": "published",
@@ -110,6 +119,16 @@
   {
    "fieldname": "section_break_yhqr",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Digital Product",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
@@ -117,8 +136,9 @@
  "image_field": "preview_image",
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-09-27 16:23:46.030027",
+ "modified": "2025-09-30 14:34:51.736722",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Digital Product",
