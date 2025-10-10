@@ -1,0 +1,35 @@
+{
+ "cards": [
+  {
+   "card": "Number Of Products"
+  },
+  {
+   "card": "Creator Task Count"
+  },
+  {
+   "card": "Customer Review State"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Todo Task View",
+   "width": "Full"
+  },
+  {
+   "chart": "Digital Product Sales View",
+   "width": "Half"
+  }
+ ],
+ "creation": "2025-09-24 12:45:41.389424",
+ "dashboard_name": "Creator Clear View",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2025-10-10 12:32:38.841669",
+ "modified_by": "Administrator",
+ "module": "Digital",
+ "name": "Creator Clear View",
+ "owner": "Administrator"
+}

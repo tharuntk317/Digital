@@ -26,13 +26,25 @@ scheduler_events = {
         ]
     }
 }
+
+
 website_context = {
-    "brand_html": "Digital Marketplace",
+    "brand_html": """
+        <div style="display:flex;align-items:center;gap:6px;">
+            <img src="/assets/digital/images/pay.png" style="height:24px;"/>
+            <span>Digital Market</span>
+        </div>
+    """,
     "favicon": "/assets/digital/images/digital_logo.png"
 }
+
 
 default_mail_footer = """
  <div>
  Sent via <a href="#" target="_blank">Digital Marketplace</a>
 </div>
 """
+
+
+
+

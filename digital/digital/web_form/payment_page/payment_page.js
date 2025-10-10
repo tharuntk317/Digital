@@ -4,7 +4,7 @@ frappe.ready(() => {
 
     button.addEventListener("click", e => {
         e.preventDefault();
-
+        
         const getParam = name => new URLSearchParams(window.location.search).get(name);
         const user_name = document.querySelector('[name="user"]')?.value || "Guest User";
         const product_id = document.querySelector('[name="product_id"]')?.value || getParam("product_id");

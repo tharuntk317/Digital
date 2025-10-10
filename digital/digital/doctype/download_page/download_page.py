@@ -3,6 +3,7 @@ from frappe.model.document import Document
 from frappe.utils import get_url
 import os
 
+
 class DownloadPage(Document):
     def after_insert(self):
         try:
@@ -67,19 +68,19 @@ class DownloadPage(Document):
 
 @frappe.whitelist()
 def download_file(product_id):
-    file_url = frappe.db.get_value("Digital Product", product_id, "file")
-    if not file_url:
-        frappe.throw("No file found for this product")
-    file_doc = frappe.get_doc("File", {"file_url": file_url})
+    product = frappe.get_doc("Digital Product", product_id)
+    if not product.file:
+        frappe.throw(_("No file found for this product"))
+    file_doc = frappe.get_doc("File", {"file_url": product.file})
     file_path = file_doc.get_full_path()
     if not os.path.exists(file_path):
-        frappe.throw("File not found on server")
-    product = frappe.get_doc("Digital Product", product_id)
-    current_count = product.download_count or 0
-    product.download_count = int(current_count) + 1
-    product.save(ignore_permissions=True)
+        frappe.throw(_("File not found on server"))
     frappe.local.response.filename = file_doc.file_name
-    with open(file_path, "rb") as f:
-        frappe.local.response.filecontent = f.read()
+    frappe.local.response.filecontent = open(file_path, "rb").read()
     frappe.local.response.type = "download"
 
+# @frappe.whitelist()
+# def download_file(product_id):
+#     f = frappe.get_doc("File", {"file_url": frappe.get_value("Digital Product", product_id, "file")})
+#     if not f or not os.path.exists(f.get_full_path()): frappe.throw(_("File not found"))
+#     frappe.local.respon se.filename, frappe.local.response.filecontent, frappe.local.response.type = f.file_name, open(f.get_full_path(), "rb").read(), "download"

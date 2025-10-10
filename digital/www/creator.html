@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CreatorsHub – Customer View</title>
+  <title>CreatorsHub Customer View</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -18,20 +18,21 @@
 </head>
 <body class="bg-black text-white">
 
-<!-- Navbar -->
+
 <nav class="bg-gradient-to-r from-black via-gray-900 to-black shadow-lg sticky top-0 z-50 rounded-b-3xl fade-in">
   <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-    <!-- Logo -->
+   
     <a href="#" class="text-2xl font-bold tracking-wide glow">
       Creators<span class="text-blue-400">Hub</span>
     </a>
 
-    <!-- Desktop Menu -->
     <div class="hidden md:flex gap-6 items-center text-sm font-medium text-white">
       <a href="creator" class="hover:text-blue-400 transition">Home</a>
       <a href="http://localhost:8001/app/digital-product/new-digital-product-huqmravwhw" 
          class="hover:text-blue-400 transition">Create</a>
       <a href="products" class="hover:text-blue-400 transition">Products</a>
+      <a href="chart" class="hover:text-blue-400 transition">Report page</a>
+
     </div>
   </div>
 </nav>
@@ -39,7 +40,7 @@
 
 
 
-<!-- Hero -->
+
 <section class="relative overflow-hidden fade-in min-h-screen flex items-center">
   <div class="absolute -top-32 -right-32 w-96 h-129 bg-blue-500 rounded-full blur-3xl opacity-20"></div>
   <div class="max-w-7xl mx-auto px-6 py-16 text-center relative">
@@ -62,7 +63,7 @@
 
 
 
-<!-- Testimonials -->
+
 <section class="bg-gray-900 py-16 fade-in">
   <div class="max-w-7xl mx-auto px-6 text-center">
     <h2 class="text-3xl font-semibold glow mb-8">What Customers Say</h2>
@@ -83,7 +84,6 @@
   </div>
 </section>
 
-<!-- Footer -->
 <footer class="bg-gradient-to-r from-black via-gray-900 to-black py-12 text-gray-400 fade-in">
   <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-center md:text-left">
     <div>
@@ -110,21 +110,6 @@
     <p>© 2025 CreatorsHub Anime. All rights reserved.</p>
   </div>
 </footer>
-
-<script>
-  // Scroll animation
-  const elements = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.style.opacity = 1;
-        entry.target.style.transform = "translateY(0)";
-      }
-    });
-  }, {threshold: 0.1});
-  elements.forEach(el=>observer.observe(el));
-</script>
-
 </body>
 </html>
 

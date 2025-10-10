@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/frappe-charts@1.2.4/dist/frappe-charts.min.iife.js"></script>
+</head>
+
+<body style="background-color: rgb(32, 31, 31); ">
+    <h1 style="text-align:center"><i><u style="color: red;">Last 30 days Payment Reports</u></i></h1>
+
+    <div id="chart"
+        style="max-width:900px; margin:50px auto; background:#130f0f; padding:20px; border-radius:10px; box-shadow:0 4px 10px rgba(46, 44, 44, 0.1);">
+    </div>
+
+    <script>
+        const labels = {{ chart_data.labels  }};
+        const values = {{ chart_data.datasets }};
+
+        const chart = new frappe.Chart("#chart", {
+            title: "Last 30 Days Payment Amount",
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        name: "Total Product Price",
+                        values: values
+                    }
+                ]
+            },
+            type: 'line',
+            height: 400,
+            colors: ["#ff4d4d"],
+            axisOptions: {
+                xAxisMode: "tick",
+                yAxisMode: "span",
+                xIsSeries: true
+            },
+            lineOptions: {
+                hideDots: false,
+                regionFill: 0.1,
+                dotSize: 5
+            },
+            tooltipOptions: {
+                formatTooltipX: d => `Date: ${d}`,
+                formatTooltipY: d => `₹ ${d}`
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+{
+ "content": null,
+ "creation": "2025-10-03 15:28:04.375419",
+ "docstatus": 0,
+ "doctype": "Page",
+ "icon": "\ud83d\ude44",
+ "idx": 0,
+ "modified": "2025-10-03 15:28:04.375419",
+ "modified_by": "Administrator",
+ "module": "Digital",
+ "name": "page-api-test",
+ "owner": "Administrator",
+ "page_name": "page-api-test",
+ "roles": [
+  {
+   "role": "creator"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 1,
+ "title": "Page API Test"
+}
