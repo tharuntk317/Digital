@@ -17,9 +17,8 @@ def send_chat_message(docname, message):
     fullname = frappe.get_value("User", user, "full_name") or user
     chat_line = f"{fullname} ({timestamp}): {message}\n"
     doc.chat_room = (doc.chat_room or "") + chat_line
-    doc.save(ignore_permissions=True)
+    doc.save()
     doc.notify_update()
-
     frappe.publish_realtime(
         event='chat_message',
         message={

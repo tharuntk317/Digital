@@ -20,7 +20,6 @@
 
   <div class="max-w-6xl w-full fade-in grid grid-cols-1 md:grid-cols-2 gap-8">
 
-    <!-- LEFT: Product Card -->
     <div class="bg-gray-900 rounded-xl shadow-lg p-6 flex flex-col">
       <img src="{{ doc.preview_image or doc.product_image }}" 
            alt="{{ doc.title }}"
@@ -64,19 +63,15 @@
       </div>
     </div>
 
-    <!-- RIGHT: File Preview by Category -->
     <div class="bg-gray-900 rounded-xl shadow-lg p-6 flex flex-col">
       <h3 class="text-lg font-semibold mb-4">Preview</h3>
 
-      <!-- Ebook -->
       {% if doc.category == "Ebook" %}
         {% if doc.file %}
-          <img src="{{ doc.preview_image }}" class="w-full h-[420px] rounded-md border border-gray-800" alt="{{ doc.title }}">
+        <iframe src="{{ doc.file }}" class="w-full h-[420px] rounded-md border border-gray-800"></iframe>
         {% else %}
           <p class="text-gray-400">No ebook file available.</p>
         {% endif %}
-
-      <!-- Music -->
       {% elif doc.category == "Music" %}
         {% if doc.file %}
           <audio controls class="w-full mt-4">
@@ -87,7 +82,6 @@
           <p class="text-gray-400">No music file available.</p>
         {% endif %}
 
-      <!-- Art / Image -->
       {% elif doc.category in ["Art", "Image"] %}
         {% if doc.file %}
           <img src="{{ doc.file }}" alt="{{ doc.title }}" class="w-full h-[420px] object-contain rounded-md border border-gray-800" />
@@ -95,7 +89,6 @@
           <img src="{{ doc.preview_image or doc.product_image }}" alt="{{ doc.title }}" class="w-full h-[420px] object-contain rounded-md border border-gray-800" />
         {% endif %}
 
-      <!-- Template -->
       {% elif doc.category == "Template" %}
         {% if doc.file %}
           <iframe src="{{ doc.file }}" class="w-full h-[420px] rounded-md border border-gray-800"></iframe>
@@ -103,7 +96,6 @@
           <p class="text-gray-400">No template available.</p>
         {% endif %}
 
-      <!-- Fallback -->
       {% else %}
         <p class="text-gray-400">Preview not available for this category.</p>
       {% endif %}

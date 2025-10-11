@@ -7,7 +7,7 @@ frappe.ui.form.on("Chat Page", {
                     height: 300px; 
                     overflow-y: auto; 
                     padding: 10px; 
-                    background: #ad1e1eff; 
+                    background: #070808ff; 
                     border-radius: 10px;
                     font-family: Arial;
                     font-size: 13px;">
@@ -19,7 +19,8 @@ frappe.ui.form.on("Chat Page", {
                 .split("\n")
                 .filter(Boolean)
                 .map(line => `<div style="
-                    background:#fff;
+                    background:#2E8B57;
+                    color: white;
                     margin:5px 0;
                     padding:6px 10px;
                     border-radius:8px;
@@ -47,36 +48,41 @@ frappe.ui.form.on("Chat Page", {
         });
     },
 
+    // send(frm) {
+    //     let msg = frm.doc.new_message?.trim();
+    //     if (!msg) return frappe.msgprint("Please type a message before sending.");
+    //     frappe.call({
+    //         method: "digital.digital.doctype.chat_page.chat_page.send_chat_message",
+    //         args: { docname: frm.doc.name, message: msg },
+    //         callback: () => {
+    //             frm.set_value("new_message", "");
+    //             frm.refresh_field("new_message");
+    //         },
+    //     });
+    // }
+
     send(frm) {
         let msg = frm.doc.new_message?.trim();
         if (!msg) return frappe.msgprint("Please type a message before sending.");
+
         frappe.call({
             method: "digital.digital.doctype.chat_page.chat_page.send_chat_message",
             args: { docname: frm.doc.name, message: msg },
             callback: () => {
+                // Clear the input
                 frm.set_value("new_message", "");
-                frm.refresh_field("new_message");
+
+                // Automatically reload the document so chat_room updates
+                frm.reload_doc().then(() => {
+                    // Optional: scroll to the bottom after reload
+                    let chatBox = document.getElementById("chat-box");
+                    if (chatBox) chatBox.scrollTop = chatBox.scrollHeight;
+                });
             }
         });
     }
+
 });
-
-
-
-
-
-
-
-
-
-// Copyright (c) 2025, tharun and contributors
-// For license information, please see license.txt
-
-// frappe.ui.form.on("Chat Page", {
-// 	refresh(frm) {
-
-// 	},
-// });
 
 
 
@@ -93,7 +99,7 @@ frappe.ui.form.on("Chat Page", {
 //                 let current = frm.doc.chat_room || "";
 //                 frm.set_value("chat_room", current + `${data.user}: ${data.message}\n`);
 // (or)
-                // frm.set_value("chat_room", current + `${data.user} (${now}): ${data.message}\n`);
+//                 frm.set_value("chat_room", current + `${data.user} (${now}): ${data.message}\n`);
 //                 frm.refresh_field("chat_room");
 //             }
 // });

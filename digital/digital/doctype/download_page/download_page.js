@@ -20,7 +20,6 @@ frappe.ui.form.on("Download Page", {
             });
 
             d.show();
-            // Directly trigger download//
             window.location.href =
                 `/api/method/digital.digital.doctype.download_page.download_page.download_file?product_id=${frm.doc.product_id}`;
 

@@ -9,7 +9,6 @@
   "section_break_ypyl",
   "new_message",
   "column_break_fray",
-  "click_here",
   "send"
  ],
  "fields": [
@@ -29,11 +28,6 @@
    "max_height": "40px"
   },
   {
-   "fieldname": "click_here",
-   "fieldtype": "Heading",
-   "label": "Click Here"
-  },
-  {
    "fieldname": "column_break_fray",
    "fieldtype": "Column Break"
   },
@@ -44,9 +38,10 @@
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-09 18:07:16.310116",
+ "modified": "2025-10-11 18:52:45.889239",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Chat Page",
