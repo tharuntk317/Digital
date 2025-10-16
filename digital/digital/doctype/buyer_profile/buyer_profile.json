@@ -16,13 +16,15 @@
   {
    "fieldname": "name1",
    "fieldtype": "Data",
+   "in_global_search": 1,
    "label": "Name",
    "unique": 1
   },
   {
    "fieldname": "age",
    "fieldtype": "Int",
-   "label": "Age"
+   "label": "Age",
+   "search_index": 1
   },
   {
    "fieldname": "email",
@@ -43,7 +45,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-17 16:14:01.060378",
+ "modified": "2025-10-13 17:00:54.928401",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Buyer Profile",

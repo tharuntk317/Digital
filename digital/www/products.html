@@ -1,3 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .fade-in { animation: fadeIn 1.2s ease-in-out forwards; opacity: 0; }
+    @keyframes fadeIn { from {opacity:0;transform:translateY(10px);} to {opacity:1;transform:translateY(0);} }
+    .glow { text-shadow: 0 0 8px #3b82f6, 0 0 15px #60a5fa; }
+  </style>
+</head>
+<body class="bg-black text-white p-6">
+
+  <h1 class="text-3xl font-bold text-center mb-5 glow fade-in">Our Products</h1>
+
+  <!-- 🔹 Small Compact Search Bar -->
+  <div class="max-w-sm mx-auto mb-8 fade-in">
+    <div class="flex items-center bg-gray-900 border border-gray-700 rounded-full px-3 py-1 shadow-md">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+           stroke-width="1.5" stroke="gray" class="w-5 h-5 mr-2">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
+      </svg>
+      <input id="searchInput" type="text" placeholder="Search..."
+        class="bg-transparent w-full text-sm text-white outline-none placeholder-gray-400">
+    </div>
+  </div>
+
+  <!-- 🔹 Product Grid -->
+  <div id="productGrid" class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-7xl mx-auto">
+    {% for doc in products %}
+      <a href="/product/{{ doc.name }}" 
+         class="product-card bg-gray-900 rounded-xl shadow-lg hover:shadow-blue-500/50 transition overflow-hidden block group fade-in"
+         data-category="{{ doc.category }}"
+         data-price="{{ doc.price }}"
+         data-tags="{{ doc.tags }}">
+        
+        <div class="relative w-full h-44 overflow-hidden">
+          <img src="{{ doc.preview_image }}" alt="{{ doc.title }}" 
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <div class="p-3 flex flex-col gap-2">
+          <h3 class="text-base font-semibold text-white line-clamp-1">{{ doc.title }}</h3>
+
+          <div class="flex flex-wrap gap-2 text-xs text-gray-400">
+            {% if doc.category %}<span class="bg-gray-800 px-2 py-0.5 rounded-full">{{ doc.category }}</span>{% endif %}
+            {% if doc.tags %}<span class="bg-gray-800 px-2 py-0.5 rounded-full">{{ doc.tags }}</span>{% endif %}
+          </div>
+
+          <p class="text-white font-semibold text-sm mt-1">₹ {{ doc.price }}</p>
+
+          <div class="flex items-center mt-2 gap-2">
+            <img src="{{ creator_logo }}" alt="Creator Logo" 
+                 class="h-6 w-6 rounded-full object-cover border border-gray-700">
+            <span class="text-gray-300 text-xs">{{ doc.creator }}</span>
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+
+  <!-- 🔹 Smart Search Logic -->
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const products = document.querySelectorAll('.product-card');
+
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.toLowerCase();
+      products.forEach(p => {
+        const name = p.querySelector('h3').textContent.toLowerCase();
+        const category = (p.dataset.category || '').toLowerCase();
+        const tags = (p.dataset.tags || '').toLowerCase();
+        const price = parseFloat(p.dataset.price || 0);
+        const matches = name.includes(q) || category.includes(q) || tags.includes(q) || (!isNaN(q) && price <= parseFloat(q));
+        p.style.display = matches ? 'block' : 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+
 <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,150 +160,3 @@
 
 </body>
 </html> -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Poppins', sans-serif; }
-    .fade-in { animation: fadeIn 1.2s ease-in-out forwards; opacity: 0; }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .glow { text-shadow: 0 0 10px #3b82f6, 0 0 20px #60a5fa; }
-  </style>
-</head>
-<body class="bg-black text-white p-6">
-
-  <h1 class="text-4xl font-bold text-center mb-8 glow fade-in">Our Products</h1>
-
-  <!-- 🔹 Filter Section -->
-  <div class="max-w-7xl mx-auto mb-8 fade-in bg-gray-900 p-4 rounded-xl shadow-md">
-    <div class="grid md:grid-cols-4 sm:grid-cols-2 gap-4">
-
-      <!-- Category Filter -->
-      <div>
-        <label for="categoryFilter" class="block mb-1 text-gray-300">Category</label>
-        <select id="categoryFilter" class="w-full p-2 rounded bg-gray-800 text-white border border-gray-700">
-          <option value="all">All Categories</option>
-          {% for category in categories %}
-            <option value="{{ category }}">{{ category }}</option>
-          {% endfor %}
-        </select>
-      </div>
-
-      <!-- Search Box -->
-      <div>
-        <label for="searchBox" class="block mb-1 text-gray-300">Search Products</label>
-        <input type="text" id="searchBox" placeholder="Type to search..."
-               class="w-full p-2 rounded bg-gray-800 text-white border border-gray-700">
-      </div>
-
-      <!-- Price Range -->
-      <div>
-        <label class="block mb-1 text-gray-300">Price Range (₹)</label>
-        <div class="flex gap-2">
-          <input type="number" id="minPrice" placeholder="Min"
-                 class="w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700">
-          <input type="number" id="maxPrice" placeholder="Max"
-                 class="w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700">
-        </div>
-      </div>
-
-      <!-- Tags Filter -->
-      <div>
-        <label class="block mb-1 text-gray-300">Tags</label>
-        <div class="flex flex-wrap gap-2">
-          <label class="flex items-center gap-1 text-sm">
-            <input type="checkbox" value="Free" class="tagFilter accent-blue-500"> Free
-          </label>
-          <label class="flex items-center gap-1 text-sm">
-            <input type="checkbox" value="Premium" class="tagFilter accent-blue-500"> Premium
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 🔹 Product Grid -->
-  <div id="productGrid" class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-7xl mx-auto">
-    {% for doc in products %}
-      <a href="/product/{{ doc.name }}" 
-         class="product-card bg-gray-900 rounded-xl shadow-lg hover:shadow-blue-500/50 transition overflow-hidden block group fade-in"
-         data-category="{{ doc.category }}"
-         data-price="{{ doc.price }}"
-         data-tags="{{ doc.tags }}">
-        
-        <div class="relative w-full h-48 overflow-hidden">
-          <img src="{{ doc.preview_image }}" alt="{{ doc.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-        </div>
-
-        <div class="p-4 flex flex-col gap-2">
-          <h3 class="text-lg font-semibold text-white line-clamp-1">{{ doc.title }}</h3>
-
-          <div class="flex flex-wrap gap-2 text-sm text-gray-400">
-            {% if doc.category %}<span class="bg-gray-800 px-2 py-1 rounded-full">{{ doc.category }}</span>{% endif %}
-            {% if doc.tags %}<span class="bg-gray-800 px-2 py-1 rounded-full">{{ doc.tags }}</span>{% endif %}
-          </div>
-
-          <p class="text-white font-semibold mt-1">₹ {{ doc.price }}</p>
-
-          <div class="flex items-center mt-2 gap-2">
-            <img src="{{ creator_logo }}" alt="Creator Logo" class="h-8 w-8 rounded-full object-cover border border-gray-700">
-            <span class="text-gray-300 text-sm">{{ doc.creator }}</span>
-          </div>
-        </div>
-      </a>
-    {% endfor %}
-  </div>
-  
-  <!-- 🔹 JS Filtering Logic -->
-  <script>
-    const filterSelect = document.getElementById('categoryFilter');
-    const searchBox = document.getElementById('searchBox');
-    const minPrice = document.getElementById('minPrice');
-    const maxPrice = document.getElementById('maxPrice');
-    const tagFilters = document.querySelectorAll('.tagFilter');
-    const products = document.querySelectorAll('.product-card');
-
-    function applyFilters() {
-      const category = filterSelect.value.toLowerCase();
-      const search = searchBox.value.toLowerCase();
-      const min = parseFloat(minPrice.value) || 0;
-      const max = parseFloat(maxPrice.value) || Infinity;
-      const selectedTags = Array.from(tagFilters)
-        .filter(cb => cb.checked)
-        .map(cb => cb.value.toLowerCase());
-
-      products.forEach(p => {
-        const productCategory = p.dataset.category.toLowerCase();
-        const productName = p.querySelector('h3').textContent.toLowerCase();
-        const productPrice = parseFloat(p.dataset.price);
-        const productTags = (p.dataset.tags || '').toLowerCase();
-
-        const matchesCategory = category === 'all' || productCategory === category;
-        const matchesSearch = productName.includes(search);
-        const matchesPrice = productPrice >= min && productPrice <= max;
-        const matchesTags = selectedTags.length === 0 || selectedTags.some(tag => productTags.includes(tag));
-
-        p.style.display = (matchesCategory && matchesSearch && matchesPrice && matchesTags) ? 'block' : 'none';
-      });
-    }
-
-    filterSelect.addEventListener('change', applyFilters);
-    searchBox.addEventListener('input', applyFilters);
-    minPrice.addEventListener('input', applyFilters);
-    maxPrice.addEventListener('input', applyFilters);
-    tagFilters.forEach(cb => cb.addEventListener('change', applyFilters));
-  </script>
-
-</body>
-</html>
-
-

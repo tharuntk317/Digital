@@ -9,6 +9,7 @@
   "section_break_ypyl",
   "new_message",
   "column_break_fray",
+  "click_here",
   "send"
  ],
  "fields": [
@@ -34,17 +35,23 @@
   {
    "fieldname": "send",
    "fieldtype": "Button",
-   "label": "Send"
+   "label": "Send \u2714"
+  },
+  {
+   "fieldname": "click_here",
+   "fieldtype": "Heading",
+   "label": "Click Here"
   }
  ],
  "grid_page_length": 50,
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-11 18:52:45.889239",
+ "modified": "2025-10-14 13:05:16.346089",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Chat Page",
+ "naming_rule": "Random",
  "owner": "Administrator",
  "permissions": [
   {

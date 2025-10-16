@@ -33,7 +33,7 @@
   },
   {
    "fieldname": "bio",
-   "fieldtype": "Text Editor",
+   "fieldtype": "Small Text",
    "label": "Bio"
   },
   {
@@ -80,7 +80,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-06 17:54:02.297474",
+ "modified": "2025-10-13 16:40:36.439868",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Creator Profile",

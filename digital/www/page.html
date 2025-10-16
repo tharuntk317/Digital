@@ -5,13 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ product.display_name }} | Creator Profile</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Custom Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Poppins', sans-serif; }
     
-    /* Animation Classes */
     .fade-in { animation: fadeIn 1.2s ease-in-out forwards; opacity: 0; }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
@@ -29,7 +26,7 @@
 
     <!-- Profile Header -->
     <div class="bg-gray-900 shadow-lg rounded-2xl p-6 flex flex-col items-center fade-in">
-      <img src="{{ product.logo or '/assets/default_profile.png' }}"
+      <img src="{{ product.logo }}"
            alt="{{ product.display_name }}"
            class="w-32 h-32 rounded-full object-cover shadow-md border border-gray-700">
       <h1 class="text-2xl font-bold mt-4 glow">{{ product.display_name }}</h1>
@@ -52,11 +49,11 @@
     </div>
 
     <!-- Skills Section -->
-    {% if product.skills_tags %}
+    {% if product.skillstags %}
       <div class="bg-gray-900 shadow-md rounded-xl p-6 mt-6 fade-in">
         <h2 class="text-xl font-semibold mb-2 glow">Skills & Tags</h2>
         <div class="flex flex-wrap gap-2">
-          {% for skill in product.skills_tags %}
+          {% for skill in product.skillstags %}
             <span class="px-3 py-1 bg-purple-800 text-purple-300 text-sm rounded-full">{{ skill }}</span>
           {% endfor %}
         </div>
@@ -73,17 +70,21 @@
 
     <!-- Interested Button -->
     <div class="text-center mt-8 fade-in">
-      <button id="interested-btn" 
-              class="relative inline-block px-6 py-3 rounded-xl text-white font-semibold transition-all
-                     bg-gradient-to-r from-purple-600 to-pink-500
-                     shadow-lg hover:shadow-[0_0_20px_#d8b4fe,0_0_30px_#f472b6]
-                     hover:from-purple-700 hover:to-pink-600
-                     before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-r before:from-purple-600 before:to-pink-500 before:blur-xl before:opacity-0 hover:before:opacity-60 before:transition-opacity hover:scale-105 transform">
-        I'm Interested
-      </button>
+  <a href="/api/method/digital.digital.doctype.chat_page.chat_page.open_chat?buyer={{ frappe.session.user }}&creator={{ product.owner }}&product_id={{ product.name }}"
+   class="relative inline-block px-6 py-3 rounded-xl text-white font-semibold transition-all
+          bg-gradient-to-r from-purple-600 to-pink-500
+          shadow-lg hover:shadow-[0_0_20px_#d8b4fe,0_0_30px_#f472b6]
+          hover:from-purple-700 hover:to-pink-600
+          before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-r before:from-purple-600 before:to-pink-500 before:blur-xl before:opacity-0 hover:before:opacity-60 before:transition-opacity hover:scale-105 transform">
+    I Want to Chat
+</a>
+
     </div>
 
   </div>
 
 </body>
 </html>
+
+
+

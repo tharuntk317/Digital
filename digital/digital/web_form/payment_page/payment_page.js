@@ -6,7 +6,7 @@ frappe.ready(() => {
         e.preventDefault();
         
         const getParam = name => new URLSearchParams(window.location.search).get(name);
-        const user_name = document.querySelector('[name="user"]')?.value || "Guest User";
+        const user_name = document.querySelector('[name="user_name"]')?.value || "Guest User";
         const product_id = document.querySelector('[name="product_id"]')?.value || getParam("product_id");
         const product_price = parseFloat(document.querySelector('[name="product_price"]')?.value || getParam("product_price")) || 100;
         const mobile = document.querySelector('[name="mobile"]')?.value || "9999999999";

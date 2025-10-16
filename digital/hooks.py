@@ -15,9 +15,10 @@ app_include_js = [
     "https://checkout.razorpay.com/v1/checkout.js"
 ]
 
-website_route_rules = [
+website_route_rules = [ 
     {"from_route": "/product/<name>", "to_route": "product"}
 ]
+
 
 scheduler_events = {
     "cron": {
