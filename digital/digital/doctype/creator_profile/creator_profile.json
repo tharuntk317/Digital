@@ -10,9 +10,11 @@
   "user",
   "display_name",
   "bio",
+  "column_break_texc",
   "skillstags",
   "logo",
   "profile_image",
+  "column_break_hqjo",
   "social_links",
   "startup_company",
   "company_name",
@@ -73,14 +75,21 @@
    "default": "0",
    "fieldname": "wallet",
    "fieldtype": "Currency",
-   "label": "Wallet",
-   "read_only": 1
+   "label": "Wallet"
+  },
+  {
+   "fieldname": "column_break_texc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_hqjo",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-13 16:40:36.439868",
+ "modified": "2025-10-17 19:31:24.362703",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Creator Profile",
@@ -101,6 +110,8 @@
   }
  ],
  "row_format": "Dynamic",
+ "sender_field": "email",
+ "sender_name_field": "creator",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

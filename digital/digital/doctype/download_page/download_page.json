@@ -5,9 +5,12 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "section_break_vyux",
   "user_name",
   "product_id",
+  "column_break_pigd",
   "product_price",
+  "click_here",
   "download"
  ],
  "fields": [
@@ -32,12 +35,26 @@
    "fieldname": "user_name",
    "fieldtype": "Data",
    "label": "User Name"
+  },
+  {
+   "fieldname": "column_break_pigd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "click_here",
+   "fieldtype": "Heading",
+   "label": "Click Here"
+  },
+  {
+   "fieldname": "section_break_vyux",
+   "fieldtype": "Section Break"
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-25 13:06:45.196164",
+ "modified": "2025-10-16 12:58:01.575912",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Download Page",

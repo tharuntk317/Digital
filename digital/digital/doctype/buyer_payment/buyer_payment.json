@@ -8,6 +8,7 @@
   "payment_method",
   "user_name",
   "product_id",
+  "column_break_wugs",
   "product_price",
   "payment_status",
   "payment_id",
@@ -29,6 +30,7 @@
   {
    "fieldname": "product_id",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Product ID",
    "read_only": 1
   },
@@ -42,6 +44,7 @@
    "default": "Prosses",
    "fieldname": "payment_status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Payment Status",
    "options": "Success\nProsses\nFailed"
   },
@@ -56,12 +59,17 @@
    "fieldname": "payment_time_and_data",
    "fieldtype": "Datetime",
    "label": "Payment Time and Data"
+  },
+  {
+   "fieldname": "column_break_wugs",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-25 13:03:00.701430",
+ "modified": "2025-10-17 16:14:07.552334",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Buyer Payment",
@@ -83,5 +91,18 @@
  "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [
+  {
+   "color": "Orange",
+   "title": "Failed"
+  },
+  {
+   "color": "Pink",
+   "title": "Prosses"
+  },
+  {
+   "color": "Purple",
+   "title": "Success"
+  }
+ ]
 }

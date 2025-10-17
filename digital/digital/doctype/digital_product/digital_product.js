@@ -1,28 +1,18 @@
-// frappe.ui.form.on("Digital Product", {
-//     refresh(frm) {
-//         frm.disable_save();
-//         frm.add_custom_button(__('Report Page'), function() {
-//             frappe.set_route("query-report", "Report View For History");
-//         });
-//     },
+frappe.ui.form.on('Digital Product', {
+    before_submit: function(frm) {
+        let info = [
+            frm.doc.creator || 'NoCreator',
+            frm.doc.title || 'NoTitle',
+            frm.doc.category || 'NoCat',
+            frm.doc.tags || 'NoTags',
+            frm.doc.price || 0,
+            frm.doc.file || 'NoFile'
+        ].join('|');
+        frm.set_value('product_detail', info);
+    },
+    refresh: function(frm) {
+        frm.set_df_property('product_detail', 'read_only', 1);
+    }
+});
 
-//     status(frm) {
-//         if (frm.doc.status === "Published") {
-//             frm.save();
-//         }
-//     }
-// });
-
-
-
-// frappe.ui.form.on("Digital Product", {
-//     refresh(frm) {
-//         if (!frm.custom_button_added) {
-//             frm.add_custom_button(__('Open Chat'), function () {
-//                 frappe.set_route("Form", "Chat Page","4vh3q2g9h5");
-//             });
-//             frm.custom_button_added = true;
-//         }
-//     }
-// });
 

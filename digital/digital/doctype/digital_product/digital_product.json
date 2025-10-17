@@ -20,6 +20,7 @@
   "column_break_dovl",
   "status",
   "product_image",
+  "product_detail",
   "section_break_fych",
   "reviews",
   "tab_2_tab",
@@ -132,6 +133,12 @@
   {
    "fieldname": "section_break_fych",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "product_detail",
+   "fieldtype": "Barcode",
+   "label": "Product Detail",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
@@ -139,7 +146,7 @@
  "image_field": "preview_image",
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-14 19:55:10.106599",
+ "modified": "2025-10-17 17:47:07.551695",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Digital Product",

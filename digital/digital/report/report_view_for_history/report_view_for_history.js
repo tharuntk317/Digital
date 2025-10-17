@@ -20,11 +20,7 @@ frappe.query_reports["Report View For History"] = {
             "label": __("Product"),
             "fieldtype": "Data"
         },
-        {
-            "fieldname": "creator",
-            "label": __("Creator"),
-            "fieldtype": "Data"
-        },
+        
         {
             "fieldname": "payment_id",
             "label": __("Payment ID"),

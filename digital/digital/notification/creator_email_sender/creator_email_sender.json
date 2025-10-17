@@ -1,0 +1,34 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "condition": "",
+ "creation": "2025-10-17 19:06:17.644527",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Creator Profile",
+ "enabled": 1,
+ "event": "Value Change",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "Your product has been sold! Please check your wallet.",
+ "message_type": "HTML",
+ "modified": "2025-10-17 19:26:35.420612",
+ "modified_by": "Administrator",
+ "module": "Digital",
+ "name": "Creator Email sender",
+ "owner": "Administrator",
+ "print_format": "",
+ "recipients": [
+  {
+   "receiver_by_document_field": "",
+   "receiver_by_role": "creator"
+  }
+ ],
+ "send_system_notification": 1,
+ "send_to_all_assignees": 0,
+ "sender": "Tharuntk376",
+ "sender_email": "tharuntk376@gmail.com",
+ "subject": "You Product is one saled",
+ "value_changed": "wallet"
+}

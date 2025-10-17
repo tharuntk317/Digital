@@ -74,7 +74,6 @@ def execute(filters=None):
     columns = [
         {"label": "User", "fieldname": "user", "fieldtype": "Link", "options": "User", "width": 150},
         {"label": "Product", "fieldname": "product", "fieldtype": "Data", "width": 180},
-        {"label": "Creator", "fieldname": "creator", "fieldtype": "Data", "width": 150},
         {"label": "Price", "fieldname": "price", "fieldtype": "Currency", "width": 120},
         {"label": "Payment ID", "fieldname": "payment_id", "fieldtype": "Data", "width": 180},
         {"label": "Purchase Date", "fieldname": "purchase_date", "fieldtype": "Datetime", "width": 180}
@@ -89,10 +88,7 @@ def execute(filters=None):
     if filters.get("product"):
         conditions.append("product LIKE %(product)s")
         values["product"] = "%" + filters.get("product") + "%"
-
-    if filters.get("creator"):
-        conditions.append("creator LIKE %(creator)s")
-        values["creator"] = "%" + filters.get("creator") + "%"
+        
 
     if filters.get("payment_id"):
         conditions.append("payment_id = %(payment_id)s")

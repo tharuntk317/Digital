@@ -22,7 +22,7 @@
  "login_required": 0,
  "max_attachment_size": 0,
  "meta_title": "Kumar AudioS",
- "modified": "2025-09-30 16:06:23.681411",
+ "modified": "2025-10-17 15:55:03.744199",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "payment-page",
@@ -44,7 +44,7 @@
    "label": "Payment Method",
    "max_length": 0,
    "max_value": 0,
-   "options": "UPI\nCard\nPost Paid\nEIM",
+   "options": "UPI",
    "precision": "",
    "read_only": 0,
    "reqd": 1,
@@ -101,7 +101,7 @@
    "max_value": 0,
    "options": "Success\nProsses\nFailed",
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -116,6 +116,20 @@
    "max_value": 0,
    "precision": "",
    "read_only": 1,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "default": "now",
+   "fieldname": "payment_time_and_data",
+   "fieldtype": "Datetime",
+   "hidden": 0,
+   "label": "Payment Time and Data",
+   "max_length": 0,
+   "max_value": 0,
+   "precision": "",
+   "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
   }
