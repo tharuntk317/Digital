@@ -26,14 +26,14 @@ class BuyerPayment(Document):
                 "price": price,
                 "payment_id": payment_id,
                 "purchase_date": now()
-            }).insert(ignore_permissions=True)
+            }).insert()
 
             frappe.get_doc({
                 "doctype": "Download Page",
                 "user_name": user,
                 "product_id": product,
                 "product_price": price
-            }).insert(ignore_permissions=True)
+            }).insert()
 
             creator_name = frappe.get_value("Digital Product", product, "creator")
             if creator_name:
@@ -42,7 +42,7 @@ class BuyerPayment(Document):
                     if not creator_doc.wallet:
                         creator_doc.wallet = 0
                     creator_doc.wallet += price
-                    creator_doc.save(ignore_permissions=True)
+                    creator_doc.save()
                 except Exception as e:
                     frappe.log_error(f"Failed to update creator wallet: {e}", "BuyerPayment")
             else:

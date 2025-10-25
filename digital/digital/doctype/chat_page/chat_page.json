@@ -16,6 +16,7 @@
   {
    "fieldname": "chat_room",
    "fieldtype": "Long Text",
+   "ignore_user_permissions": 1,
    "label": "Chat Room"
   },
   {
@@ -26,16 +27,19 @@
    "fieldname": "new_message",
    "fieldtype": "Small Text",
    "label": "New Message",
-   "max_height": "40px"
+   "max_height": "40px",
+   "options": "\n",
+   "placeholder": "Enter a Message"
   },
   {
    "fieldname": "column_break_fray",
    "fieldtype": "Column Break"
   },
   {
+   "description": "If you click here, the message will be sent to the appropriate person.",
    "fieldname": "send",
    "fieldtype": "Button",
-   "label": "Send \u2714"
+   "label": "<button style=\"background:#25D366;color:#fff;border:0;padding:8px 14px;border-radius:4px;\">Send \ud83d\udcac</button>"
   },
   {
    "fieldname": "click_here",
@@ -45,9 +49,10 @@
  ],
  "grid_page_length": 50,
  "hide_toolbar": 1,
+ "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-14 13:05:16.346089",
+ "modified": "2025-10-24 19:00:00.916334",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Chat Page",

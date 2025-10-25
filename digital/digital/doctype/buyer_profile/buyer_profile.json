@@ -43,9 +43,10 @@
   }
  ],
  "grid_page_length": 50,
+ "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-13 17:00:54.928401",
+ "modified": "2025-10-24 18:59:45.642170",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Buyer Profile",

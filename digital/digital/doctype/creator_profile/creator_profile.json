@@ -75,6 +75,7 @@
    "default": "0",
    "fieldname": "wallet",
    "fieldtype": "Currency",
+   "ignore_user_permissions": 1,
    "label": "Wallet"
   },
   {
@@ -87,9 +88,10 @@
   }
  ],
  "grid_page_length": 50,
+ "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-17 19:31:24.362703",
+ "modified": "2025-10-24 18:59:07.412765",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Creator Profile",

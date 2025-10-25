@@ -7,16 +7,20 @@ def get_context(context):
 
     payments = frappe.get_all(
         "Buyer Payment",
-        fields=["product_price", "creation"],
-        filters={"creation": [">=", start_date]},
+        fields=["product_price", "payment_time_and_data"],
+        filters={"payment_time_and_data": [">=", start_date]},
         order_by="creation asc"
     )
+
     daily_totals = defaultdict(float)
     for p in payments:
-        daily_totals[p["creation"].strftime("%Y-%m-%d")] += float(p["product_price"])
+        payment_date = p["payment_time_and_data"].strftime("%Y-%m-%d")
+        daily_totals[payment_date] += float(p.get("product_price") or 0)
+
     sorted_dates = sorted(daily_totals)
     context.chart_data = {
         "labels": sorted_dates,
         "datasets": [daily_totals[d] for d in sorted_dates]
     }
+
     return context

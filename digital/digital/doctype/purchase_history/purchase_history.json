@@ -9,6 +9,7 @@
   "user",
   "product",
   "price",
+  "column_break_bhst",
   "payment_id",
   "purchase_date"
  ],
@@ -16,36 +17,45 @@
   {
    "fieldname": "user",
    "fieldtype": "Data",
+   "ignore_user_permissions": 1,
    "label": "User",
    "options": "User"
   },
   {
    "fieldname": "product",
    "fieldtype": "Link",
+   "ignore_user_permissions": 1,
    "label": "Product",
    "options": "Digital Product"
   },
   {
    "fieldname": "price",
    "fieldtype": "Currency",
+   "ignore_user_permissions": 1,
    "label": "Price"
   },
   {
    "fieldname": "payment_id",
    "fieldtype": "Data",
+   "ignore_user_permissions": 1,
    "label": "Payment ID"
   },
   {
    "fieldname": "purchase_date",
    "fieldtype": "Datetime",
+   "ignore_user_permissions": 1,
    "label": "Purchase Date"
+  },
+  {
+   "fieldname": "column_break_bhst",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-13 12:13:19.325901",
+ "modified": "2025-10-23 12:08:59.723433",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Purchase History",

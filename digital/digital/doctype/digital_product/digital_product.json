@@ -126,6 +126,7 @@
   {
    "fieldname": "reviews",
    "fieldtype": "Table",
+   "ignore_user_permissions": 1,
    "label": "Reviews",
    "options": "Review Shower",
    "read_only": 1
@@ -146,7 +147,7 @@
  "image_field": "preview_image",
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-17 17:47:07.551695",
+ "modified": "2025-10-23 11:53:07.255682",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Digital Product",

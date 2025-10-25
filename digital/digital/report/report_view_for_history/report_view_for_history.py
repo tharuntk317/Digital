@@ -74,7 +74,7 @@ def execute(filters=None):
     columns = [
         {"label": "User", "fieldname": "user", "fieldtype": "Link", "options": "User", "width": 150},
         {"label": "Product", "fieldname": "product", "fieldtype": "Data", "width": 180},
-        {"label": "Price", "fieldname": "price", "fieldtype": "Currency", "width": 120},
+        {"label": "Price", "fieldname": "price", "fieldtype": "Currency", "width": 150},
         {"label": "Payment ID", "fieldname": "payment_id", "fieldtype": "Data", "width": 180},
         {"label": "Purchase Date", "fieldname": "purchase_date", "fieldtype": "Datetime", "width": 180}
     ]

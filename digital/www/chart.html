@@ -9,15 +9,15 @@
 </head>
 
 <body style="background-color: rgb(32, 31, 31); ">
-    <h1 style="text-align:center"><i><u style="color: red;">Last 30 days Payment Reports</u></i></h1>
+    <h1 style="text-align:center"><i><u style="color: rgb(109, 122, 136);">Last 30 days Payment Reports</u></i></h1>
 
     <div id="chart"
         style="max-width:900px; margin:50px auto; background:#130f0f; padding:20px; border-radius:10px; box-shadow:0 4px 10px rgba(46, 44, 44, 0.1);">
     </div>
 
     <script>
-        const labels = {{ chart_data.labels  }};
-        const values = {{ chart_data.datasets }};
+        const labels = {{ chart_data.labels | tojson }};
+        const values = {{ chart_data.datasets | tojson }};
 
         const chart = new frappe.Chart("#chart", {
             title: "Last 30 Days Payment Amount",

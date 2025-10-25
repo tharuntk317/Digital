@@ -1,7 +1,7 @@
 frappe.ui.form.on("Chat Page", {
     refresh(frm) {
-       frm.add_custom_button("Go To Home 📦", () => {
-    window.location.href = "http://localhost:8001/homepage";
+       frm.add_custom_button("Go To Home 🏠", () => {
+    window.location.href = "/homepage";
 });
         frm.disable_save();
         if (!frm.chat_box) {
@@ -42,7 +42,7 @@ frappe.ui.form.on("Chat Page", {
         }).join("")
     );
 
-    frm.chat_box.scrollTop(frm.chat_box[0].scrollHeight);
+    
 };
         renderChat();
     },
@@ -61,6 +61,21 @@ frappe.ui.form.on("Chat Page", {
         });
     }
 });
+
+frappe.ui.form.on("Chat Page", {
+    chart_room(frm) {
+        frappe.realtime.on("chat_message", (data) => {
+            if (data.user !== frappe.session.user) {
+                frappe.show_alert({
+                    message: `New message from ${data.user}: ${data.message}`,
+                    indicator: 'green'
+                }, 5);
+            }
+        });
+    }
+});
+
+
 
 
 
@@ -293,9 +308,7 @@ frappe.ui.form.on("Chat Page", {
 //         }
 //          frappe.realtime.on('chat_message', (data) => {
 //             if (data.docname === frm.doc.name) {
-//                 let current = frm.doc.chat_room || "";
-//                 frm.set_value("chat_room", current + `${data.user}: ${data.message}\n`);
-// (or)
+//                 let current = frm.doc.chat_room || ""
 //                 frm.set_value("chat_room", current + `${data.user} (${now}): ${data.message}\n`);
 //                 frm.refresh_field("chat_room");
 //             }

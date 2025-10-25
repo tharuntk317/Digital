@@ -17,23 +17,27 @@
   {
    "fieldname": "product_id",
    "fieldtype": "Data",
+   "ignore_user_permissions": 1,
    "label": "Product ID",
    "read_only": 1
   },
   {
    "fieldname": "download",
    "fieldtype": "Button",
+   "ignore_user_permissions": 1,
    "label": "Download"
   },
   {
    "fieldname": "product_price",
    "fieldtype": "Data",
+   "ignore_user_permissions": 1,
    "label": "Product Price",
    "read_only": 1
   },
   {
    "fieldname": "user_name",
    "fieldtype": "Data",
+   "ignore_user_permissions": 1,
    "label": "User Name"
   },
   {
@@ -43,6 +47,7 @@
   {
    "fieldname": "click_here",
    "fieldtype": "Heading",
+   "ignore_user_permissions": 1,
    "label": "Click Here"
   },
   {
@@ -54,7 +59,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-16 12:58:01.575912",
+ "modified": "2025-10-23 12:08:13.574429",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Download Page",
