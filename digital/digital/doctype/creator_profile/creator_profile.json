@@ -18,7 +18,10 @@
   "social_links",
   "startup_company",
   "company_name",
-  "wallet"
+  "wallet",
+  "status",
+  "section_break_ievx",
+  "total_earnings"
  ],
  "fields": [
   {
@@ -85,13 +88,34 @@
   {
    "fieldname": "column_break_hqjo",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nActive\nInactive"
+  },
+  {
+   "fieldname": "section_break_ievx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_earnings",
+   "fieldtype": "Table",
+   "label": "Total Earnings",
+   "options": "Total Earnings"
   }
  ],
  "grid_page_length": 50,
  "in_create": 1,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2025-10-24 18:59:07.412765",
+ "links": [
+  {
+   "link_doctype": "Digital Product",
+   "link_fieldname": "creator"
+  }
+ ],
+ "modified": "2025-10-28 11:49:06.930766",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Creator Profile",
@@ -116,5 +140,14 @@
  "sender_name_field": "creator",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [
+  {
+   "color": "Purple",
+   "title": "Active"
+  },
+  {
+   "color": "Yellow",
+   "title": "Inactive"
+  }
+ ]
 }

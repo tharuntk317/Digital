@@ -19,6 +19,6 @@ class ReviewPage(Document):
             "review_date": getattr(self, "review_date", nowdate())
         })
         product_doc.flags.ignore_validate_update_after_submit = True
-        product_doc.save()
+        product_doc.save(ignore_permissions=True)
 
 

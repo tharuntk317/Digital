@@ -1,12 +1,12 @@
 frappe.ui.form.on('Digital Product', {
-    before_submit: function(frm) {
-        let info = [
-            frm.doc.creator,
-            frm.doc.title ,
-            frm.doc.category ,
-            frm.doc.tags,
-            frm.doc.price,
-            frm.doc.file 
+    before_submit(frm) {
+          let info = [
+            frm.doc.creator || 'NoCreator',
+            frm.doc.title || 'NoTitle',
+            frm.doc.category || 'NoCat',
+            frm.doc.tags || 'NoTags',
+            frm.doc.price || 0,
+            frm.doc.file || 'NoFile'
         ].join('|');
         frm.set_value('product_detail', info);
     },
@@ -26,5 +26,32 @@ frappe.ui.form.on('Digital Product', {
 }
     },
 });
+
+frappe.ui.form.on('Digital Product', {
+   on_submit(frm) {
+        if (frappe.session.user === frm.doc.creator) {
+            frappe.msgprint("Administrator approved your product!");
+        }
+    }
+});
+
+
+
+// frappe.ui.form.ControlLink.link_options = function(link) {
+//     return [
+//         {
+//             html: `<span>${__("see the example output")}</span>`,
+//             label: __("creator"),
+//             value: "creator",
+//             action: () => {
+//                 window.location.href = "/products";
+//             }
+//         }
+//     ];
+// }
+
+
+
+
 
 

@@ -1,0 +1,53 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="container mt-5">
+    <button class="btn btn-info mb-4" onclick="window.location.href='/products'">
+    View Products
+</button>
+
+  <button class="btn btn-primary mb-4" onclick="window.location.href='/app/future-product'">
+    List Products
+</button>
+    <div class="card shadow-lg border-0 rounded-3">
+        <div class="card-header bg-info text-dark text-center py-3">
+
+            <h2 class="mb-0 text-white">{{ title or "Future Product" }}</h2>
+        </div>
+
+        <div class="card-body">
+            <div class="row g-4">
+                <div class="col-md-4 text-center">
+                    {% if doc.preview_image %}
+                        <img src="{{ doc.preview_image }}" alt="Preview Image" class="img-fluid rounded-3 mb-3 shadow-sm">
+                    {% endif %}
+                    <p class="text-muted">Download Count: {{ doc.download_count or 0 }}</p>
+                </div>
+
+                <div class="col-md-8">
+                    <h4 class="fw-bold">{{ doc.title }}</h4>
+                    <p class="text-muted mb-2">{{ doc.company_name or "Unknown Company" }}</p>
+                    <p>{{ doc.description or "No description available." }}</p>
+
+                    <ul class="list-unstyled mt-3 mb-3">
+                        <li><strong>Category:</strong> {{ doc.category }}</li>
+                        <li><strong>Tags:</strong> {{ doc.tags }}</li>
+                        <li><strong>Price:</strong> ₹{{ doc.price or "Free" }}</li>
+                        <li><strong>Status:</strong> {{ doc.status or "Pending" }}</li>
+                    </ul>
+
+                    {% if doc.product_image %}
+                        <a href="{{ doc.product_image }}" class="btn btn-outline-primary me-2" target="_blank">
+                            View Product Image
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="card-footer text-center text-muted">
+            <small>Created by {{ doc.creator}} | Product Details: {{ doc.product_detail }}</small>
+        </div>
+    </div>
+</div>
+{% endblock %}

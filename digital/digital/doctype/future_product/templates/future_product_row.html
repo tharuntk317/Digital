@@ -1,0 +1,24 @@
+ 
+<div class="col-md-4 mb-4 d-flex flex-column align-items-center">
+    <div class="card shadow-sm border-0 rounded-3 h-100">
+        <div class="card-body text-center">
+
+            {% if doc.preview_image %}
+                <img src="{{ doc.preview_image }}" 
+                     alt="Preview" 
+                     class="img-fluid rounded mb-3" 
+                     style="max-height: 180px;">
+            {% endif %}
+
+            <h5 class="fw-bold">{{ doc.title }}</h5>
+            <p class="text-muted mb-1">{{ doc.company_name }}</p>
+            <p class="small text-muted">{{ doc.category }}</p>
+            <p class="fw-semibold mt-2">₹{{ doc.price or "Free" }}</p>
+
+            <a href="{{ doc.route }}" class="btn btn-primary btn-sm">
+                View Details
+            </a>
+        </div>
+    </div>
+</div>
+

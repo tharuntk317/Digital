@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,8 +16,8 @@
     </div>
 
     <script>
-        const labels = {{ chart_data.labels | tojson }};
-        const values = {{ chart_data.datasets | tojson }};
+        const labels = {{ chart_data.labels }};
+        const values = {{ chart_data.datasets }};
 
         const chart = new frappe.Chart("#chart", {
             title: "Last 30 Days Payment Amount",
@@ -52,4 +52,62 @@
 
 </body>
 
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Last 30 Days Payment Report</title>
+    <script src="https://cdn.jsdelivr.net/npm/frappe-charts@1.2.4/dist/frappe-charts.min.iife.js"></script>
+</head>
+
+<body style="background-color:#201f1f; color:white;">
+    <h1 style="text-align:center; margin-top:30px;">
+        <i><u style="color:#6d7a88;">Last 30 Days Payment Reports</u></i>
+    </h1>
+
+    <div id="chart"
+         style="max-width:900px; margin:50px auto; background:#130f0f; padding:20px; border-radius:10px;
+         box-shadow:0 4px 10px rgba(46, 44, 44, 0.4);">
+    </div>
+
+    <script>
+    const labels = {{ chart_data.labels }};
+    const values = {{ chart_data.datasets }};
+
+    const chart = new frappe.Chart("#chart", {
+        title: "Last 30 Days Payment Amount",
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    name: "Total Product Price",
+                    values: values
+                }
+            ]
+        },
+        type: 'donut',
+        height: 400,
+        colors: ["#FF0000"],
+        axisOptions: {
+            xAxisMode: "tick",
+            yAxisMode: "span",
+            xIsSeries: true
+        },
+        lineOptions: {
+            hideDots: false,
+            regionFill: 1,
+            dotSize: 5
+        },
+        tooltipOptions: {
+            formatTooltipX: d => `Date: ${d}`,
+            formatTooltipY: d => `₹ ${d}`
+        }
+    });
+</script>
+
+</body>
 </html>
