@@ -56,7 +56,7 @@
  "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-28 13:29:47.264618",
+ "modified": "2025-10-31 17:56:04.864739",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Purchase History",
@@ -79,5 +79,6 @@
  "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_seen": 1
 }

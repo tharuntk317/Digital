@@ -20,6 +20,7 @@
   "company_name",
   "wallet",
   "status",
+  "website",
   "section_break_ievx",
   "total_earnings"
  ],
@@ -104,6 +105,11 @@
    "fieldtype": "Table",
    "label": "Total Earnings",
    "options": "Total Earnings"
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website"
   }
  ],
  "grid_page_length": 50,
@@ -115,7 +121,7 @@
    "link_fieldname": "creator"
   }
  ],
- "modified": "2025-10-28 11:49:06.930766",
+ "modified": "2025-11-01 12:42:39.105352",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Creator Profile",

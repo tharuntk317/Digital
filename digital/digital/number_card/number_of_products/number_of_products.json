@@ -1,5 +1,6 @@
 {
  "aggregate_function_based_on": "",
+ "background_color": "#544e4e",
  "creation": "2025-09-24 12:51:27.949876",
  "currency": "INR",
  "docstatus": 0,
@@ -12,7 +13,7 @@
  "is_public": 1,
  "is_standard": 1,
  "label": "Number Of Products",
- "modified": "2025-09-24 12:53:07.630258",
+ "modified": "2025-10-28 19:28:41.602965",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Number Of Products",

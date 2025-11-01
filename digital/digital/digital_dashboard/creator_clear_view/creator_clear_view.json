@@ -8,15 +8,22 @@
   },
   {
    "card": "Customer Review State"
+  },
+  {
+   "card": "Purchasing Count"
   }
  ],
  "charts": [
   {
-   "chart": "Todo Task View",
-   "width": "Full"
+   "chart": "Future Product Report",
+   "width": "Half"
   },
   {
    "chart": "Digital Product Sales View",
+   "width": "Half"
+  },
+  {
+   "chart": "Todo Task View",
    "width": "Half"
   }
  ],
@@ -24,10 +31,10 @@
  "dashboard_name": "Creator Clear View",
  "docstatus": 0,
  "doctype": "Dashboard",
- "idx": 0,
+ "idx": 2,
  "is_default": 0,
  "is_standard": 1,
- "modified": "2025-10-10 12:32:38.841669",
+ "modified": "2025-10-28 19:30:22.235552",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Creator Clear View",

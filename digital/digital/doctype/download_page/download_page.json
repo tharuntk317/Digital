@@ -1,6 +1,14 @@
 {
- "actions": [],
+ "actions": [
+  {
+   "action": "query-report/Product%20Items%20Report",
+   "action_type": "Route",
+   "label": "Report"
+  }
+ ],
+ "allow_import": 1,
  "allow_rename": 1,
+ "autoname": "format:PLE-{MM}-{YYYY}-{DD}{user_name}-{product_id}-{#####}",
  "creation": "2025-09-17 17:54:48.790867",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -59,10 +67,11 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-23 12:08:13.574429",
+ "modified": "2025-11-01 12:09:34.879047",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Download Page",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

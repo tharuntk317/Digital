@@ -1,0 +1,43 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-01 13:38:13.517820",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "terms_and_conditions"
+ ],
+ "fields": [
+  {
+   "fieldname": "terms_and_conditions",
+   "fieldtype": "HTML",
+   "label": "Terms And Conditions",
+   "options": "\n\n\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Terms &amp; Conditions - Digital Market for Creator</title>\n\n\n  <div style=\"max-width: 800px; background-color: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin: auto;\">\n    <h1 style=\"color: #1e40af;\">Digital Market for Creator</h1>\n    <h2 style=\"color: #1e40af;\">Terms &amp; Conditions</h2>\n    <p>\n      Welcome to <strong>Digital Market for Creator</strong>. By using our platform, you agree to the following terms and conditions. \n      Please read them carefully before proceeding.\n    </p>\n\n    <h2 style=\"color: #1e40af;\">1. Creator and Buyer Responsibilities</h2>\n    <ul style=\"margin-top: 10px;\">\n      <li style=\"margin-bottom: 8px;\">Creators are responsible for ensuring that the products they upload comply with all applicable laws and intellectual property rights.</li>\n      <li style=\"margin-bottom: 8px;\">Buyers must use purchased products only for the purpose defined in the license terms.</li>\n      <li style=\"margin-bottom: 8px;\">Both parties are expected to maintain respectful and professional communication.</li>\n    </ul>\n\n    <h2 style=\"color: #1e40af;\">2. Platform Fees and Commissions</h2>\n    <ul style=\"margin-top: 10px;\">\n      <li style=\"margin-bottom: 8px;\">The platform charges a <strong>10% commission</strong> on every product sale.</li>\n      <li style=\"margin-bottom: 8px;\">An additional <strong>5% app fee</strong> applies to maintain and enhance platform services.</li>\n      <li style=\"margin-bottom: 8px;\">Applicable taxes such as <strong>GST (10%)</strong> may be applied based on regional requirements.</li>\n      <li style=\"margin-bottom: 8px;\">The remaining balance after deductions will be credited to the creator\u2019s wallet.</li>\n    </ul>\n\n    <h2 style=\"color: #1e40af;\">3. Refund and Payout Policy</h2>\n    <ul style=\"margin-top: 10px;\">\n      <li style=\"margin-bottom: 8px;\">Refund requests must be submitted within <strong>7 days</strong> of purchase with a valid reason.</li>\n      <li style=\"margin-bottom: 8px;\">Payouts are processed only after the refund period ends for the purchased products.</li>\n      <li style=\"margin-bottom: 8px;\">Creators can request a payout once their wallet balance exceeds the platform\u2019s minimum withdrawal limit.</li>\n    </ul>\n\n    <h2 style=\"color: #1e40af;\">4. Account Management</h2>\n    <ul style=\"margin-top: 10px;\">\n      <li style=\"margin-bottom: 8px;\">Each user must provide accurate details during registration.</li>\n      <li style=\"margin-bottom: 8px;\">Accounts involved in fraudulent activity may be suspended or permanently banned.</li>\n      <li style=\"margin-bottom: 8px;\">Users are responsible for securing their login credentials.</li>\n    </ul>\n\n    <h2 style=\"color: #1e40af;\">5. Changes to Terms</h2>\n    <p>\n      The platform reserves the right to modify these terms at any time. Updated terms will be published on this page,\n      and continued use of the platform implies acceptance of the revised terms.\n    </p>\n\n    <p><strong>Last Updated:</strong> October 2025</p>\n  </div>\n\n\n"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-11-01 14:14:00.861589",
+ "modified_by": "Administrator",
+ "module": "Digital Management",
+ "name": "The Condition For Creator",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

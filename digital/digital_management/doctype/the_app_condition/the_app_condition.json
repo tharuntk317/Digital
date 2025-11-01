@@ -1,0 +1,39 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-01 13:32:17.732421",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "terms_and_conditions",
+  "name1"
+ ],
+ "fields": [
+  {
+   "fieldname": "terms_and_conditions",
+   "fieldtype": "HTML",
+   "label": "Terms And Conditions",
+   "options": "<meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Terms &amp; Conditions - Digital Market for Creator</title>\n  <style>\n    body {\n      font-family: \"Segoe UI\", Arial, sans-serif;\n      background-color: #f9fafb;\n      color: #333;\n      line-height: 1.6;\n      padding: 40px;\n    }\n    .container {\n      max-width: 800px;\n      background-color: #fff;\n      padding: 40px;\n      border-radius: 12px;\n      box-shadow: 0 4px 10px rgba(0,0,0,0.1);\n      margin: auto;\n    }\n    h1, h2 {\n      color: #1e40af;\n    }\n    ul {\n      margin-top: 10px;\n    }\n    li {\n      margin-bottom: 8px;\n    }\n  </style>\n\n\n  <div class=\"container\">\n    <h1>Digital Market for Creator</h1>\n    <h2>Terms &amp; Conditions</h2>\n    <p>\n      Welcome to <strong>Digital Market for Creator</strong>. By using our platform, you agree to the following terms and conditions. \n      Please read them carefully before proceeding.\n    </p>\n\n    <h2>1. Creator and Buyer Responsibilities</h2>\n    <ul>\n      <li>Creators are responsible for ensuring that the products they upload comply with all applicable laws and intellectual property rights.</li>\n      <li>Buyers must use purchased products only for the purpose defined in the license terms.</li>\n      <li>Both parties are expected to maintain respectful and professional communication.</li>\n    </ul>\n\n    <h2>2. Platform Fees and Commissions</h2>\n    <ul>\n      <li>The platform charges a <strong>10% commission</strong> on every product sale.</li>\n      <li>An additional <strong>5% app fee</strong> applies to maintain and enhance platform services.</li>\n      <li>Applicable taxes such as <strong>GST (10%)</strong> may be applied based on regional requirements.</li>\n      <li>The remaining balance after deductions will be credited to the creator\u2019s wallet.</li>\n    </ul>\n\n    <h2>3. Refund and Payout Policy</h2>\n    <ul>\n      <li>Refund requests must be submitted within <strong>7 days</strong> of purchase with a valid reason.</li>\n      <li>Payouts are processed only after the refund period ends for the purchased products.</li>\n      <li>Creators can request a payout once their wallet balance exceeds the platform\u2019s minimum withdrawal limit.</li>\n    </ul>\n\n    <h2>4. Account Management</h2>\n    <ul>\n      <li>Each user must provide accurate details during registration.</li>\n      <li>Accounts involved in fraudulent activity may be suspended or permanently banned.</li>\n      <li>Users are responsible for securing their login credentials.</li>\n    </ul>\n\n    <h2>5. Changes to Terms</h2>\n    <p>\n      The platform reserves the right to modify these terms at any time. Updated terms will be published on this page,\n      and continued use of the platform implies acceptance of the revised terms.\n    </p>\n\n    <p><strong>Last Updated:</strong> October 2025</p>\n  </div>\n\n\n"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-11-01 13:37:03.842038",
+ "modified_by": "Administrator",
+ "module": "Digital Management",
+ "name": "The App Condition",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,32 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "creation": "2025-10-31 19:21:44.639987",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Refund Request B",
+ "enabled": 1,
+ "event": "New",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Refund Confirmation</title>\n  <style>\n    body {\n      font-family: Arial, sans-serif;\n      background-color: #f5f7fa;\n      color: #333;\n      padding: 20px;\n    }\n    .container {\n      background-color: #fff;\n      border-radius: 8px;\n      padding: 25px;\n      max-width: 600px;\n      margin: auto;\n      box-shadow: 0 2px 6px rgba(0,0,0,0.1);\n    }\n    h2 {\n      color: #2563eb;\n    }\n    p {\n      line-height: 1.6;\n    }\n    .footer {\n      margin-top: 20px;\n      font-size: 14px;\n      color: #666;\n    }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <h2>Refund Processed Successfully</h2>\n    <p>Dear Customer,</p>\n    <p>\n      We\u2019re writing to let you know that your refund has been successfully processed.\n      The amount will be credited to your original payment method within a few business days.\n    </p>\n    <p>\n      If you have any questions or concerns, please reach out to our support team at\n      <a href=\"mailto:support@example.com\">support@example.com</a>.\n    </p>\n    <p>\n      Thank you for your patience and for being a valued part of our community.\n    </p>\n    <div class=\"footer\">\n      Best regards,<br>\n      <strong>The Digital Market Team</strong>\n    </div>\n  </div>\n</body>\n</html>\n",
+ "message_type": "HTML",
+ "modified": "2025-10-31 19:57:46.809991",
+ "modified_by": "Administrator",
+ "module": "Digital Management",
+ "name": "Refund Details",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_document_field": "owner",
+   "receiver_by_role": "buyer"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "sender": "Tharuntk376",
+ "sender_email": "tharuntk376@gmail.com",
+ "set_property_after_alert": "payment_id",
+ "subject": "User want to refund"
+}

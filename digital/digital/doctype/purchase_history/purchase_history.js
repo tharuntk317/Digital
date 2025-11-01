@@ -19,7 +19,8 @@ frappe.ui.form.on("Purchase History", {
                 callback: function(r) {
                     if (!r.exc) {
                         frappe.msgprint("Creator earnings updated successfully!");
-                        frm.reload_doc();
+                        // frm.reload_doc();
+                        frm.clear_custom_buttons();
                     }
                 }
             });

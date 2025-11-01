@@ -1,5 +1,6 @@
 {
  "aggregate_function_based_on": "",
+ "background_color": "#4F9DD9",
  "creation": "2025-10-10 12:32:08.632812",
  "currency": "INR",
  "docstatus": 0,
@@ -12,7 +13,7 @@
  "is_public": 1,
  "is_standard": 1,
  "label": "Customer Review State",
- "modified": "2025-10-10 12:32:38.796304",
+ "modified": "2025-10-28 19:29:16.444817",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Customer Review State",

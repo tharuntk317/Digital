@@ -1,0 +1,86 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:RR-{DD}-{MM}-{YYYY}-{name1}-{#####}",
+ "creation": "2025-10-31 18:25:05.861507",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "name1",
+  "current_amount",
+  "gst",
+  "column_break_ogah",
+  "app_commission",
+  "total_amount",
+  "send_request"
+ ],
+ "fields": [
+  {
+   "fieldname": "name1",
+   "fieldtype": "Link",
+   "label": "Name",
+   "options": "Creator Profile"
+  },
+  {
+   "fetch_from": "name1.wallet",
+   "fieldname": "current_amount",
+   "fieldtype": "Currency",
+   "label": "Current Amount",
+   "read_only_depends_on": "current_amount"
+  },
+  {
+   "fieldname": "gst",
+   "fieldtype": "Currency",
+   "label": "GST",
+   "read_only_depends_on": "gst"
+  },
+  {
+   "fieldname": "app_commission",
+   "fieldtype": "Currency",
+   "label": "App Commission",
+   "read_only_depends_on": "app_commission"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "read_only_depends_on": "total_amount"
+  },
+  {
+   "fieldname": "send_request",
+   "fieldtype": "Button",
+   "label": "Send Request"
+  },
+  {
+   "fieldname": "column_break_ogah",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-10-31 18:34:30.140901",
+ "modified_by": "Administrator",
+ "module": "Digital Management",
+ "name": "Payout Request C",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,5 +1,6 @@
 {
  "aggregate_function_based_on": "",
+ "background_color": "#7bb08c",
  "creation": "2025-09-24 13:22:58.359231",
  "currency": "INR",
  "docstatus": 0,
@@ -12,7 +13,7 @@
  "is_public": 1,
  "is_standard": 1,
  "label": "Creator Task Count",
- "modified": "2025-09-24 13:23:02.855334",
+ "modified": "2025-10-28 19:31:22.827942",
  "modified_by": "Administrator",
  "module": "Digital",
  "name": "Creator Task Count",
